@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ServicesFragment"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="102dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutServicesBar"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundcorner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewServicesName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/services"
+                android:textAllCaps="true"
+                android:textColor="@color/taskill_secondary_color"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.517" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <ImageButton
+            android:id="@+id/imageButton10"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton8"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton8"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintStart_toStartOf="@+id/imageButton7"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton6"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton6"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintStart_toStartOf="@+id/imageButton5"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton4"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintStart_toStartOf="@+id/imageButton3"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/babysitting"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/cleaning"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/repairs"
+            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/roundcorner"
+            android:backgroundTint="@color/taskill_main_color"
+            android:src="@drawable/shopping"
+            app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

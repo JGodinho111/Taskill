@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="SpeakableTextPresentCheck">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/frameLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HelpFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutHelpBar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewHelpName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/help"
+            android:textAllCaps="true"
+            android:textColor="@color/taskill_secondary_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutHelpContent"
+            android:layout_width="match_parent"
+            android:layout_height="900dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/roundcorner"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutHelpBar"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutHelpBar"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHelpBar">
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer8"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toEndOf="@+id/textViewHelpFaq8"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq8"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq8" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer7"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer7" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer7"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq7"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq7" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer6"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer6" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer6"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq6"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq6" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer5"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer5" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer5"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq5"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq5" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer4"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer4" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer4"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq4"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq4" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer3"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer3" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer3"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq3"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq3" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer2"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer2" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer2"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq2"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq2" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1Answer"
+                android:layout_width="395dp"
+                android:layout_height="70dp"
+                android:text="Usuallly if...................................................doisphobvhigvhygucgu9ihugvgcui0ugggu0iugyfylu0uyugiyfllu9´´8'u9yuyfliyu90u9ytuyfliyu9ytyfyu9´´ytyifty9u9ytyfdtfutyu9ytiyrtylyituyfutkdk"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random question"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/textViewHelpFaq1Answer"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelpFaq1Answer" />
+
+            <TextView
+                android:id="@+id/textViewHelp2"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="See if your question is in this faq. If not consider sending us a message and we'll get back to you as soon as we can."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelp1" />
+
+            <TextView
+                android:id="@+id/textViewHelp1"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="Need Help?"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewHelpFaq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Can I do xxxx and yyyy if z?"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHelp2" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonHelpChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                android:layout_marginBottom="32dp"
+                android:clickable="true"
+                android:src="@android:drawable/ic_menu_send"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewHelpFaq1Answer8"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

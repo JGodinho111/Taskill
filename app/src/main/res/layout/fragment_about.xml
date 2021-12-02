@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="SpeakableTextPresentCheck">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/frameLayout8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutAboutBar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewAboutName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/about"
+            android:textAllCaps="true"
+            android:textColor="@color/taskill_secondary_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutAboutContent"
+        android:layout_width="match_parent"
+        android:layout_height="900dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayoutAboutBar"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayoutAboutBar"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutAboutBar">
+
+        <ImageView
+            android:id="@+id/imageViewAbout4"
+            android:layout_width="74dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/aboutusperson"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAbout3"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAbout2" />
+
+        <ImageView
+            android:id="@+id/imageViewAbout3"
+            android:layout_width="74dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/aboutusperson"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewAbout4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAbout1" />
+
+        <ImageView
+            android:id="@+id/imageViewAbout2"
+            android:layout_width="74dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/aboutusperson"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAbout1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewAbout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="João Godinho, 53683"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewAbout3"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAbout4" />
+
+        <TextView
+            android:id="@+id/textViewAbout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Miguel Bandeira, 52793"
+            app:layout_constraintEnd_toStartOf="@+id/textViewAbout4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAbout3" />
+
+        <TextView
+            android:id="@+id/textViewAbout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ricardo Macedo, 52774"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewAbout1"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAbout2" />
+
+        <ImageView
+            android:id="@+id/imageViewAbout1"
+            android:layout_width="74dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/aboutusperson"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewAbout2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewAbout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Filipe Sousa, 52748"
+            app:layout_constraintEnd_toStartOf="@+id/textViewAbout2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAbout1" />
+
+        <TextView
+            android:id="@+id/textViewAboutTeam"
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="400dp"
+            android:text="Hi, we're four people from Faculdade de Ciências, Universidade de Lisboa and this is a quick look at our team. This is our first mock-up view of what our app for giving and receiving services might look like! Thanks for coming here :)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
