@@ -22,7 +22,8 @@ public class LogInActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LogInActivity.this,MainActivity.class));
+                startActivity(new Intent(LogInActivity.this,MainActivityBot.class));
+                //startActivity(new Intent(LogInActivity.this,MainActivity.class));
             }
         });
     }

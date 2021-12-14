@@ -39,7 +39,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/constraintLayoutSS1"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
@@ -68,14 +68,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
+            android:id="@+id/constraintLayoutSS2"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS1"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS1"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS1">
 
             <TextView
                 android:id="@+id/textView8"
@@ -97,14 +97,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout4"
+            android:id="@+id/constraintLayoutSS3"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS2"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS2"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS2">
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -126,14 +126,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout5"
+            android:id="@+id/constraintLayoutSS4"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS3"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS3"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS3">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -146,14 +146,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout6"
+            android:id="@+id/constraintLayoutSS5"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout5"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS4"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS4"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS4">
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -166,14 +166,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout7"
+            android:id="@+id/constraintLayoutSS6"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout6"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout6"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS5"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS5"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS5">
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -186,14 +186,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout8"
+            android:id="@+id/constraintLayoutSS7"
             android:layout_width="match_parent"
             android:layout_height="146dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout7"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout7"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS6"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS6"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS6">
 
             <ImageView
                 android:id="@+id/imageView9"

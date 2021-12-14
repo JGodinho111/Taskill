@@ -10,27 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskill">
         <activity
+            android:name=".MainActivityBot"
+            android:exported="true"
+            android:label="@string/title_activity_main_bot" />
+        <activity
             android:name=".LogInActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
-        </activity>
-        <!--
-        <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LogInActivity" />
-        -->
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -68,9 +68,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -80,9 +81,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -92,9 +94,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -104,9 +107,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -116,9 +120,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -128,9 +133,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -140,9 +146,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -152,9 +159,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -164,9 +172,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -176,9 +185,10 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SingleServiceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -189,7 +199,8 @@ public class ServicesFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         Fragment fragment = new SingleServiceFragment();
-        FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+        FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+        //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.menu,fragment);
         transaction.addToBackStack(null);

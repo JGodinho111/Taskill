@@ -1,5 +1,7 @@
 package com.example.taskill;
 
+//Deprecated - NO LONGER USED
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -70,9 +72,10 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new ServicesFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -82,9 +85,10 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new MarketplaceFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -94,9 +98,10 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new ProfileFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -106,9 +111,10 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new SettingsFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -118,9 +124,9 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new HelpFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -129,7 +135,7 @@ public class MenuFragment extends Fragment {
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(((MainActivity)getActivity()),LogInActivity.class));
+                startActivity(new Intent(((MainActivityBot)getActivity()),LogInActivity.class));
             }
         });
         return v;

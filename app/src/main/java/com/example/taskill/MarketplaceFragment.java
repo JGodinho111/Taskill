@@ -68,9 +68,10 @@ public class MarketplaceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new HireFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
@@ -80,9 +81,10 @@ public class MarketplaceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new HireFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

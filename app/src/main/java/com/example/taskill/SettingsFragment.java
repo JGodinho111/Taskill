@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
 
+import com.example.taskill.databinding.FragmentSettingsBinding;
+import com.example.taskill.databinding.FragmentSingleServiceBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Random;
@@ -32,6 +36,8 @@ public class SettingsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private FragmentSettingsBinding binding;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -69,36 +75,49 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
-        Button bMode = (Button)v.findViewById(R.id.buttonSettingsMode);
+
+        binding = FragmentSettingsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        Button bMode = (Button)root.findViewById(R.id.buttonSettingsMode);
         bMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Random r = new Random();
                 int newBackgroundColor = Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256));
-                ((MainActivity)getActivity()).getWindow().getDecorView().setBackgroundColor(newBackgroundColor);
+                ((MainActivityBot)getActivity()).getWindow().getDecorView().setBackgroundColor(newBackgroundColor);
+                //((MainActivity)getActivity()).getWindow().getDecorView().setBackgroundColor(newBackgroundColor);
             }
         });
 
+        View bGoToProfile = root.findViewById(R.id.floatingActionButtonSettingsToProfile);
+        bGoToProfile.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+            Bundle args = new Bundle();
+            navController.navigate(R.id.navigation_profile, args);
+        });
+        /*
         FloatingActionButton bSwapProfile = (FloatingActionButton)v.findViewById(R.id.floatingActionButtonSettingsToProfile);
         bSwapProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new ProfileFragment();
-                FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
+                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
+                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
                 FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.menu,fragment);
+                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
-
-        Switch swapActiveAccountOnLogin = (Switch)v.findViewById(R.id.switchAppPresetProfile);
+        */
+        Switch swapActiveAccountOnLogin = (Switch)root.findViewById(R.id.switchAppPresetProfile);
         swapActiveAccountOnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO - Se tiver ativo quando dou login a prespetiva vai para o que disponibiliza serviços/que usufrui dos serviços
             }
         });
-        return v;
+        return root;
     }
 }

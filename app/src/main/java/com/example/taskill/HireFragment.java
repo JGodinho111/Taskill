@@ -79,7 +79,7 @@ public class HireFragment extends Fragment {
             public void onClick(View view) {
                 //TODO - Abrir calendario com datas disponíveis e
                 // poder selecionar e avançar para o pagamento
-                DatePickerDialog datePickerDialog = new DatePickerDialog(((MainActivity)getActivity()), new DatePickerDialog.OnDateSetListener()
+                DatePickerDialog datePickerDialog = new DatePickerDialog(((MainActivityBot)getActivity()), new DatePickerDialog.OnDateSetListener()
                 {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
