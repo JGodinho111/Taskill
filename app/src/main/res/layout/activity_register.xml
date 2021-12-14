@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogInActivity">
+    tools:context=".RegisterActivity">
 
     <Button
-        android:id="@+id/buttonLogIn"
+        android:id="@+id/buttonRegister"
         android:layout_width="214dp"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:backgroundTint="@color/taskill_main_color"
-        android:text="@string/log_in"
+        android:text="Sign Up"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPutPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddPassword" />
 
     <ImageView
-        android:id="@+id/imageViewLogIn"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/taskill_logo"
@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/taskill" />
 
     <EditText
-        android:id="@+id/editTextPutEmailAddress"
+        android:id="@+id/editTextAddEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -43,11 +43,11 @@
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLogIn"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextPutPassword"
+        android:id="@+id/editTextAddPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -63,24 +63,23 @@
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPutEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddEmailAddress"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textViewHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't Have an Account Yet?"
+        android:text="Already Have an Account?"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
 
     <TextView
-        android:id="@+id/textViewGoToRegister"
+        android:id="@+id/textViewGoToLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="  Click here to create a new account!"
+        android:text="  Click here to log in"
         android:textColor="@color/taskill_main_color_lighter"
         android:textSize="16sp"
         android:textStyle="bold|italic"
