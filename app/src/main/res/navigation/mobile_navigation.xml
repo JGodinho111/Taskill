@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_menu">
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.example.taskill.ui.home.HomeFragment"
+        android:label="@string/title_menu"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_services"
+        android:name="com.example.taskill.ui.dashboard.DashboardFragment"
+        android:label="@string/title_services"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_marketplace"
+        android:name="com.example.taskill.ui.notifications.NotificationsFragment"
+        android:label="@string/title_marketplace"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.taskill.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.taskill.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_help"
+        android:name="com.example.taskill.HelpFragment"
+        android:label="@string/title_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/navigation_single_service"
+        android:name="com.example.taskill.SingleServiceFragment"
+        android:label="@string/title_single_service"
+        tools:layout="@layout/fragment_single_service" />
+
+    <fragment
+        android:id="@+id/navigation_hireServicee"
+        android:name="com.example.taskill.HireFragment"
+        android:label="@string/title_hire_fragment"
+        tools:layout="@layout/fragment_hire" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.example.taskill.AboutFragment"
+        android:label="@string/title_about_fragment"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>

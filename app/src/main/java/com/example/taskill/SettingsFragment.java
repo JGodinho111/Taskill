@@ -1,5 +1,6 @@
 package com.example.taskill;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -96,6 +97,28 @@ public class SettingsFragment extends Fragment {
             Bundle args = new Bundle();
             navController.navigate(R.id.navigation_profile, args);
         });
+
+        View bGoToHelp = root.findViewById(R.id.buttonSettingsGoToHelp);
+        bGoToHelp.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+            Bundle args = new Bundle();
+            navController.navigate(R.id.navigation_help, args);
+        });
+
+        View bGoToAbout = root.findViewById(R.id.buttonSettingsGoToAbout);
+        bGoToAbout.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+            Bundle args = new Bundle();
+            navController.navigate(R.id.navigation_about, args);
+        });
+
+
+        View bGoToLogout = root.findViewById(R.id.buttonSettingsGoToLogout);
+        bGoToLogout.setOnClickListener(view -> {
+            startActivity(new Intent(((MainActivityBot)getActivity()), LogInActivity.class));
+        });
+
+
         /*
         FloatingActionButton bSwapProfile = (FloatingActionButton)v.findViewById(R.id.floatingActionButtonSettingsToProfile);
         bSwapProfile.setOnClickListener(new View.OnClickListener() {

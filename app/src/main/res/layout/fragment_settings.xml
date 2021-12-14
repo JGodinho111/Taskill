@@ -43,7 +43,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutSettingsContent"
         android:layout_width="match_parent"
-        android:layout_height="900dp"
+        android:layout_height="1300dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/roundcorner"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSettingsBar"
@@ -51,11 +51,23 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSettingsBar">
 
         <TextView
-            android:id="@+id/textViewSettingsOptions"
+            android:id="@+id/textViewSettingsAccountMessages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:text="General Options"
+            android:text="Messages"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonSwapAccount" />
+
+        <TextView
+            android:id="@+id/textViewSettingsAccountOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Account Options"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +171,7 @@
             android:text="Swap App Account Preset"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSettingsOptions" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewSettingsAccountOptions" />
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
@@ -171,6 +183,66 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/switchAppPresetProfile" />
+
+        <Button
+            android:id="@+id/buttonSwapAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Swap Profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
+
+        <Button
+            android:id="@+id/buttonDeleteAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="132dp"
+            android:text="Delete Account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsGoToLogout" />
+
+        <Button
+            android:id="@+id/buttonSettingsGoToMessages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click Here to See Your Messages"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSettingsAccountMessages" />
+
+        <Button
+            android:id="@+id/buttonSettingsGoToLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Log Out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsGoToAbout" />
+
+        <Button
+            android:id="@+id/buttonSettingsGoToHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Click Here to Go to the Help Page"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsGoToMessages" />
+
+        <Button
+            android:id="@+id/buttonSettingsGoToAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Click Here to get to know the app creators"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsGoToHelp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

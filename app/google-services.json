@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99785010524",
+    "project_id": "taskil-c3023",
+    "storage_bucket": "taskil-c3023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99785010524:android:ab26f4cecffd938d17e599",
+        "android_client_info": {
+          "package_name": "com.example.taskill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99785010524-mno7iv37u2h6ijnhhgt4p4mcuu3jn6jf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Iw-wOpR5p_5NiDVgOn1pZu0rgdW8QiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99785010524-mno7iv37u2h6ijnhhgt4p4mcuu3jn6jf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
