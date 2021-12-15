@@ -4,20 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#20232A"
+    android:backgroundTint="#20232A"
     tools:context=".RegisterActivity">
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="214dp"
+        android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/taskill_main_color"
         android:text="Sign Up"
-        android:textColor="@android:color/white"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddConfirmPassword" />
+
+    <TextView
+        android:id="@+id/textViewGoToLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="  Click here to log in"
+        android:textColor="@color/taskill_main_color_lighter"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAddPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewHaveAccount"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Already Have an Account?"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -31,13 +62,18 @@
 
     <EditText
         android:id="@+id/editTextAddEmailAddress"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:ems="10"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:drawablePadding="5dp"
+        android:ems="15"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:singleLine="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
         app:backgroundTint="@color/white"
@@ -50,40 +86,48 @@
         android:id="@+id/editTextAddPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="5dp"
+        android:ems="15"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:shadowColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/white"
         android:textColorHighlight="@android:color/white"
         android:textColorHint="@android:color/white"
         android:textColorLink="@android:color/white"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextAddEmailAddress"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/textViewHaveAccount"
+    <EditText
+        android:id="@+id/editTextAddConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already Have an Account?"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="5dp"
+        android:ems="15"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:shadowColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textColorLink="@android:color/white"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddPassword"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/textViewGoToLogIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  Click here to log in"
-        android:textColor="@color/taskill_main_color_lighter"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHaveAccount" />
 </androidx.constraintlayout.widget.ConstraintLayout>

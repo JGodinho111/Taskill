@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#20232A"
+    android:backgroundTint="#20232A"
     tools:context=".LogInActivity">
 
     <Button
         android:id="@+id/buttonLogIn"
-        android:layout_width="214dp"
+        android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:backgroundTint="@color/taskill_main_color"
@@ -17,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPutPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
     <ImageView
         android:id="@+id/imageViewLogIn"
@@ -30,14 +32,17 @@
         app:srcCompat="@drawable/taskill" />
 
     <EditText
-        android:id="@+id/editTextPutEmailAddress"
+        android:id="@+id/inputEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:ems="10"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:drawablePadding="5dp"
+        android:ems="15"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
         app:backgroundTint="@color/white"
@@ -47,15 +52,18 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextPutPassword"
+        android:id="@+id/inputPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="5dp"
+        android:ems="15"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:shadowColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/white"
         android:textColorHighlight="@android:color/white"
         android:textColorHint="@android:color/white"
@@ -63,28 +71,32 @@
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPutEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textViewHaveAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Don't Have an Account Yet?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
 
     <TextView
         android:id="@+id/textViewGoToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="  Click here to create a new account!"
         android:textColor="@color/taskill_main_color_lighter"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewHaveAccount" />
+
+    <TextView
+        android:id="@+id/textViewHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Don't Have an Account Yet?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

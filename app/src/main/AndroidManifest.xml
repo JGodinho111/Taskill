@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.taskill">
 
     <application
@@ -11,11 +12,13 @@
         android:theme="@style/Theme.Taskill">
         <activity
             android:name=".RegisterActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".ui.login.LoginActivity2"
             android:exported="true"
-            android:label="@string/title_activity_login2" />
+            android:label="@string/title_activity_login2"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".MainActivityBot"
             android:exported="true"
