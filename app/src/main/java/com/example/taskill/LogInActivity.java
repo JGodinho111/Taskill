@@ -51,11 +51,7 @@ public class LogInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 performLogin();
-
-                // Para testar no emulador --> Descomentar a linha de código seguinte
                 //startActivity(new Intent(LogInActivity.this,MainActivityBot.class));
-
-
                 //startActivity(new Intent(LogInActivity.this,MainActivity.class));
             }
         });
