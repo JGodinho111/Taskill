@@ -13,15 +13,12 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
-            android:name=".ui.login.LoginActivity2"
-            android:exported="true"
-            android:label="@string/title_activity_login2"
-            tools:ignore="MissingClass" />
         <activity
             android:name=".MainActivityBot"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_main_bot" />
         <activity
             android:name=".LogInActivity"
