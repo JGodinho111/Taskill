@@ -33,12 +33,26 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_marketplace"/>-->
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="#15E6BC"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="SpeakableTextPresentCheck">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
@@ -49,7 +63,9 @@
                 android:id="@+id/constraintLayoutMarketPlace"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/roundcorner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,8 +90,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayoutMarketPlace1"
                 android:layout_width="match_parent"
-                android:layout_height="146dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/roundcorner"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayoutMarketPlace"
                 app:layout_constraintStart_toStartOf="@+id/constraintLayoutMarketPlace"
@@ -83,138 +101,127 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="111dp"
-                    android:layout_height="75dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Text me if need me, we'll work something out"
+                    android:layout_width="225dp"
+                    android:layout_height="76dp"
+                    android:layout_marginTop="76dp"
+                    android:layout_marginEnd="28dp"
+                    android:text="Need someone qualified to clean a big stain and perform a full cleaning on a synthetic carpet! I´m willing to pay 20"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/imageViewMarketplace1"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:text="João Marques"
-                    android:textStyle="italic"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewMarketplace1"
-                    app:layout_constraintTop_toTopOf="@+id/imageViewMarketplace1" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageViewMarketplace1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="64dp"
-                    android:src="@drawable/aboutusperson"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/young_smiling_woman_vacuum_cleaning_carpet"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.044"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.076" />
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="I can water your plants for a small fee every week!"
+                    android:text="Cleaning stained carpet"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
                     android:textStyle="bold|italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.072"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView13"
+                <Button
+                    android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Taskill Score"
-                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="#20232A"
+                    android:ems="8"
+                    android:text="Read more"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView12"
+                    app:layout_constraintVertical_bias="0.9" />
 
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="84dp"
-                    android:layout_height="74dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="173 Tasks Done          92% Positive Feedback"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayoutMarketPlace2"
                 android:layout_width="match_parent"
-                android:layout_height="146dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/roundcorner"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayoutMarketPlace1"
                 app:layout_constraintStart_toStartOf="@+id/constraintLayoutMarketPlace1"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayoutMarketPlace1">
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="88dp"
-                    android:layout_height="74dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="83 Tasks Done          98% Positive Feedback"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Taskill Score"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:text="Mariana Ventura"
-                    android:textStyle="italic"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewMarketPlace2"
-                    app:layout_constraintTop_toTopOf="@+id/imageViewMarketPlace2" />
 
                 <ImageView
                     android:id="@+id/imageViewMarketPlace2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="64dp"
-                    android:src="@drawable/aboutusperson"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/male_standing_near_church_giving_out_pamphlets"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.054"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.357" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Hey, I can give out flyers for your business"
+                    android:text="Give out busines flyers "
+                    android:textColor="#000000"
+                    android:textSize="20sp"
                     android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/imageViewMarketPlace2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.086"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.482" />
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="111dp"
-                    android:layout_height="75dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Press me if you wanna know more :)"
+                    android:layout_width="222dp"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="96dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="Need someone to give out flyers from my business company! I´m willing to pay 5€/h."
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/imageViewMarketPlace2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:backgroundTint="#20232A"
+                    android:ems="8"
+                    android:text="Read more"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11"
+                    app:layout_constraintVertical_bias="0.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,9 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +43,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS1"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout"
@@ -52,8 +56,11 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="48dp"
                 android:text="João Marques"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageViewMarketplace1"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,17 +68,20 @@
                 android:id="@+id/imageViewMarketplace1"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson" />
+                android:src="@drawable/portrait_young_man_propping_chin_hand_black_t_shirt_looking_cheerful_front_view" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS2"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS1"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS1"
@@ -81,8 +91,11 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="48dp"
                 android:text="Mariana Ventura"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageViewMarketPlace2"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,17 +103,20 @@
                 android:id="@+id/imageViewMarketPlace2"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson" />
+                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS3"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS2"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS2"
@@ -110,17 +126,21 @@
                 android:id="@+id/imageView5"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson"/>
+                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="48dp"
                 android:text="Ana Maria"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -128,8 +148,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS4"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS3"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS3"
@@ -139,17 +161,20 @@
                 android:id="@+id/imageView6"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson" />
+                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS5"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS4"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS4"
@@ -159,17 +184,20 @@
                 android:id="@+id/imageView7"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson" />
+                android:src="@drawable/portrait_young_man_propping_chin_hand_black_t_shirt_looking_cheerful_front_view" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS6"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/roundcorner"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS5"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS5"
@@ -179,18 +207,23 @@
                 android:id="@+id/imageView8"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson" />
+                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSS7"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/roundcorner"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSS6"
             app:layout_constraintStart_toStartOf="@+id/constraintLayoutSS6"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSS6">
@@ -199,10 +232,11 @@
                 android:id="@+id/imageView9"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/aboutusperson" />
+                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

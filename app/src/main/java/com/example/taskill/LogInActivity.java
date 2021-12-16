@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class LogInActivity extends AppCompatActivity {
     EditText inputPassword;
     EditText inputConfirmPassword;
     Button b;
+    ImageView btnGoogle;
 
     String emailPattern= "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
     ProgressDialog progressDialog;
@@ -42,6 +44,7 @@ public class LogInActivity extends AppCompatActivity {
 
         inputEmail=findViewById(R.id.inputEmail);
         inputPassword=findViewById(R.id.inputPassword);
+        btnGoogle=findViewById(R.id.btnGoogle);
         progressDialog= new ProgressDialog(this);
         mAuth= FirebaseAuth.getInstance();
         mUser= mAuth.getCurrentUser();
@@ -53,6 +56,14 @@ public class LogInActivity extends AppCompatActivity {
                 performLogin();
                 //startActivity(new Intent(LogInActivity.this,MainActivityBot.class));
                 //startActivity(new Intent(LogInActivity.this,MainActivity.class));
+            }
+        });
+
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(LogInActivity.this,GoogleSignInActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -72,7 +83,7 @@ public class LogInActivity extends AppCompatActivity {
         if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter a valid Email!");
         } else if (password.isEmpty() || password.length() < 6) {
-            inputPassword.setError("Enter valid password!");
+            inputPassword.setError("Enter valid password!\n Password must have at least 6 characters!");
         } else {
             progressDialog.setMessage("Login in progress... Please Wait!");
             progressDialog.setTitle("Login");

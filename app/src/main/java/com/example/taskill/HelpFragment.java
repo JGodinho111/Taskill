@@ -62,14 +62,7 @@ public class HelpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_help, container, false);
-        FloatingActionButton chatButton = (FloatingActionButton) v.findViewById(R.id.floatingActionButtonHelpChat);
-        chatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO - Abrir um chat firebase em que pode enviar mensagens a pedir ajuda e
-                // receberá uma mensagem automática a dizer que a mensagem foi recebida e será vista ASAP
-            }
-        });
+
         return v;
     }
 }

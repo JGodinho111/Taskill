@@ -34,11 +34,9 @@
         app:layout_constraintVertical_bias="0.0"
         tools:layout="@layout/fragment_services" />-->
 
-    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout"
@@ -52,7 +50,9 @@
                 android:id="@+id/constraintLayoutServicesBar"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/roundcorner"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

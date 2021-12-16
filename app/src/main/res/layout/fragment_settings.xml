@@ -17,7 +17,9 @@
         android:id="@+id/constraintLayoutSettingsBar"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/roundcorner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,8 +45,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutSettingsContent"
         android:layout_width="match_parent"
-        android:layout_height="1300dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/roundcorner"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayoutSettingsBar"
         app:layout_constraintStart_toStartOf="@+id/constraintLayoutSettingsBar"
@@ -56,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:text="Messages"
+            android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
@@ -68,99 +73,38 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:text="Account Options"
+            android:textColor="#000000"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBoxSettingsAccessibility1" />
 
-        <TextView
-            android:id="@+id/textViewSettingsAccessibility"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="Accessibility Options"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMyInfo2" />
-
-        <TextView
-            android:id="@+id/textViewMyInfo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Adress"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMyInfo" />
-
-        <TextView
-            android:id="@+id/textViewSettingsMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="App Background Color"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/buttonSettingsMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/taskill_secondary_color"
-            android:text="Press to Change Background Color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSettingsMode" />
-
-        <TextView
-            android:id="@+id/textViewSettingsAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="About Me"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsMode" />
-
-        <TextView
-            android:id="@+id/textViewMyInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="My Name"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSettingsAccount" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonSettingsToProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:clickable="true"
-            android:src="@drawable/profile"
-            app:layout_constraintEnd_toStartOf="@+id/textViewSettingsAccount"
-            app:layout_constraintTop_toTopOf="@+id/textViewSettingsAccount"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <CheckBox
             android:id="@+id/checkBoxSettingsAccessibility1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:alpha="0.6"
+            android:buttonTint="#000000"
             android:text="Brightness Always High"
+            android:textColor="#000000"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.525"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSettingsAccessibility" />
+
+        <TextView
+            android:id="@+id/textViewSettingsAccessibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accessibility Options"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="21dp" />
 
         <Switch
             android:id="@+id/switchAppPresetProfile"
@@ -169,6 +113,8 @@
             android:layout_marginTop="8dp"
             android:minHeight="48dp"
             android:text="Swap App Account Preset"
+            android:textColor="#000000"
+            android:thumbTint="#20232A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSettingsAccountOptions" />
@@ -179,6 +125,7 @@
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="Current Preset: User"
+            android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -189,6 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:backgroundTint="#20232A"
             android:text="Swap Profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -198,16 +146,22 @@
             android:id="@+id/buttonDeleteAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="132dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#20232A"
             android:text="Delete Account"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsGoToLogout" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonSettingsGoToLogout"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/buttonSettingsGoToMessages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#20232A"
             android:text="Click Here to See Your Messages"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -218,6 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:backgroundTint="#20232A"
             android:text="Log Out"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.479"
@@ -229,6 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:backgroundTint="#20232A"
             android:text="Click Here to Go to the Help Page"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -239,6 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:backgroundTint="#20232A"
             android:text="Click Here to get to know the app creators"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

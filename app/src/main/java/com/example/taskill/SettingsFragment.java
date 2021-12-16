@@ -80,24 +80,6 @@ public class SettingsFragment extends Fragment {
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button bMode = (Button)root.findViewById(R.id.buttonSettingsMode);
-        bMode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Random r = new Random();
-                int newBackgroundColor = Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256));
-                ((MainActivityBot)getActivity()).getWindow().getDecorView().setBackgroundColor(newBackgroundColor);
-                //((MainActivity)getActivity()).getWindow().getDecorView().setBackgroundColor(newBackgroundColor);
-            }
-        });
-
-        View bGoToProfile = root.findViewById(R.id.floatingActionButtonSettingsToProfile);
-        bGoToProfile.setOnClickListener(view -> {
-            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
-            Bundle args = new Bundle();
-            navController.navigate(R.id.navigation_profile, args);
-        });
-
         View bGoToHelp = root.findViewById(R.id.buttonSettingsGoToHelp);
         bGoToHelp.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
@@ -119,21 +101,7 @@ public class SettingsFragment extends Fragment {
         });
 
 
-        /*
-        FloatingActionButton bSwapProfile = (FloatingActionButton)v.findViewById(R.id.floatingActionButtonSettingsToProfile);
-        bSwapProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment = new ProfileFragment();
-                FragmentManager fm = ((MainActivityBot)getActivity()).fragmentManager;
-                //FragmentManager fm = ((MainActivity)getActivity()).fragmentManager;
-                FragmentTransaction transaction = fm.beginTransaction();
-                transaction.replace(R.id.nav_host_fragment_activity_main_bot,fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-        */
+
         Switch swapActiveAccountOnLogin = (Switch)root.findViewById(R.id.switchAppPresetProfile);
         swapActiveAccountOnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

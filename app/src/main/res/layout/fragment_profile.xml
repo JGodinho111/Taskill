@@ -15,7 +15,9 @@
         android:id="@+id/constraintLayoutProfileBar"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/roundcorner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,38 +40,45 @@
             app:layout_constraintVertical_bias="0.517" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayoutProfileContent"
-            android:layout_width="match_parent"
-            android:layout_height="900dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/roundcorner"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutProfileBar"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayoutProfileBar"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutProfileBar">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="203dp"
-                android:layout_height="172dp"
-                android:layout_marginTop="64dp"
-                android:src="@drawable/aboutusperson"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.452"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutProfileContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayoutProfileBar"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayoutProfileBar"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutProfileBar">
 
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:text="My Name"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="203dp"
+            android:layout_height="172dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="10dp"
+            android:text="Mariana Ventura"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
