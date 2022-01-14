@@ -58,5 +58,10 @@
         android:name="com.example.taskill.ui.AboutFragment"
         android:label="@string/title_about_fragment"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="com.example.taskill.BookingFragment"
+        android:label="@string/title_booking_fragment"
+        tools:layout="@layout/fragment_booking" />
 
 </navigation>
