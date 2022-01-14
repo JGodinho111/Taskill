@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -80,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         String name = "First";
         String username = "firstusername";
-
+        
         ServiceUser newUser= new ServiceUser(name,username,email,password);
 
         reference.child(username).setValue(newUser);
