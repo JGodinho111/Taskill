@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_services">
+    app:startDestination="@+id/navigation_menu">
 
     <fragment
         android:id="@+id/navigation_menu"
@@ -21,41 +21,41 @@
         android:id="@+id/navigation_marketplace"
         android:name="com.example.taskill.ui.notifications.NotificationsFragment"
         android:label="@string/title_marketplace"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_marketplace" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.taskill.ProfileFragment"
+        android:name="com.example.taskill.ui.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.taskill.SettingsFragment"
+        android:name="com.example.taskill.ui.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_help"
-        android:name="com.example.taskill.HelpFragment"
+        android:name="com.example.taskill.ui.HelpFragment"
         android:label="@string/title_help"
         tools:layout="@layout/fragment_help" />
 
     <fragment
-        android:id="@+id/navigation_single_service"
-        android:name="com.example.taskill.SingleServiceFragment"
+        android:id="@+id/navigation_babysiting_service"
+        android:name="com.example.taskill.ui.services.BabysitingServiceFragment"
         android:label="@string/title_single_service"
-        tools:layout="@layout/fragment_single_service" />
+        tools:layout="@layout/fragment_babysiting_service" />
 
     <fragment
         android:id="@+id/navigation_hireServicee"
-        android:name="com.example.taskill.HireFragment"
+        android:name="com.example.taskill.ui.HireFragment"
         android:label="@string/title_hire_fragment"
         tools:layout="@layout/fragment_hire" />
 
     <fragment
         android:id="@+id/navigation_about"
-        android:name="com.example.taskill.AboutFragment"
+        android:name="com.example.taskill.ui.AboutFragment"
         android:label="@string/title_about_fragment"
         tools:layout="@layout/fragment_about" />
 

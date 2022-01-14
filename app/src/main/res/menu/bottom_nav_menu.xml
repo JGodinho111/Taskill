@@ -3,9 +3,9 @@
 
 
     <item
-        android:id="@+id/navigation_services"
-        android:icon="@drawable/services_logo"
-        android:title="@string/title_services" />
+        android:id="@+id/navigation_menu"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_menu" />
 
     <item
         android:id="@+id/navigation_marketplace"
@@ -13,18 +13,20 @@
         android:title="@string/title_marketplace" />
 
     <item
-        android:id="@+id/navigation_menu"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_menu" />
+        android:id="@+id/navigation_services"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/title_services" />
 
-    <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/profile_logo"
-        android:title="@string/title_profile" />
 
-    <item
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/settings_logo"
-        android:title="@string/title_settings" />
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_profile"-->
+<!--        android:icon="@drawable/profile_logo"-->
+<!--        android:title="@string/title_profile" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_settings"-->
+<!--        android:icon="@drawable/settings_logo"-->
+<!--        android:title="@string/title_settings" />-->
 
 </menu>

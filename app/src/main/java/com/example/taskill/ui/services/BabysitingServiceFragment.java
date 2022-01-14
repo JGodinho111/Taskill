@@ -1,4 +1,4 @@
-package com.example.taskill;
+package com.example.taskill.ui.services;
 
 import android.os.Bundle;
 
@@ -11,15 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.taskill.databinding.FragmentSingleServiceBinding;
-import com.example.taskill.ui.dashboard.DashboardViewModel;
+import com.example.taskill.R;
+import com.example.taskill.databinding.FragmentBabysitingServiceBinding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SingleServiceFragment#newInstance} factory method to
+ * Use the {@link BabysitingServiceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SingleServiceFragment extends Fragment {
+public class BabysitingServiceFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,9 +30,9 @@ public class SingleServiceFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private FragmentSingleServiceBinding binding;
+    private FragmentBabysitingServiceBinding binding;
 
-    public SingleServiceFragment() {
+    public BabysitingServiceFragment() {
         // Required empty public constructor
     }
 
@@ -45,8 +45,8 @@ public class SingleServiceFragment extends Fragment {
      * @return A new instance of fragment SingleServiceFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SingleServiceFragment newInstance(String param1, String param2) {
-        SingleServiceFragment fragment = new SingleServiceFragment();
+    public static BabysitingServiceFragment newInstance(String param1, String param2) {
+        BabysitingServiceFragment fragment = new BabysitingServiceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,9 +67,9 @@ public class SingleServiceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_single_service, container, false);
+        View v =  inflater.inflate(R.layout.fragment_babysiting_service, container, false);
 //TODO - Meter este ficheiro bem no formato Home/Dashboard/Notifications
-        binding = FragmentSingleServiceBinding.inflate(inflater, container, false);
+        binding = FragmentBabysitingServiceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         ConstraintLayout cServicee1 = root.findViewById(R.id.constraintLayoutSS1);

@@ -36,27 +36,27 @@ public class DashboardFragment extends Fragment {
         bBabysitting.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
-            navController.navigate(R.id.navigation_single_service, args);
+            navController.navigate(R.id.navigation_babysiting_service, args);
         });
 
         View bCleaning = root.findViewById(R.id.imageButton2);
         bCleaning.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
-            navController.navigate(R.id.navigation_single_service, args);
+            navController.navigate(R.id.navigation_babysiting_service, args);
         });
 
         View bRepairs = root.findViewById(R.id.imageButton3);
         bRepairs.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
-            navController.navigate(R.id.navigation_single_service, args);
+            navController.navigate(R.id.navigation_babysiting_service, args);
         });
         View bShopping = root.findViewById(R.id.imageButton4);
         bShopping.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
-            navController.navigate(R.id.navigation_single_service, args);
+            navController.navigate(R.id.navigation_babysiting_service, args);
         });
 
         return root;

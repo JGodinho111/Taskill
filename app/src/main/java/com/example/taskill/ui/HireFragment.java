@@ -1,4 +1,4 @@
-package com.example.taskill;
+package com.example.taskill.ui;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 
-import java.io.ObjectInputStream;
+import com.example.taskill.R;
+
 import java.util.Calendar;
 
 /**

@@ -2,24 +2,24 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/babysitting_service"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/taskill_secondary_color"
+    android:backgroundTint="@color/taskill_secondary_color"
     tools:ignore="SpeakableTextPresentCheck">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SingleServiceFragment">
+        tools:context=".ui.services.BabysitingServiceFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/roundcorner"
+            android:layout_height="68dp"
+            android:background="@color/taskill_main_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -29,7 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
-                android:text="BABYSITTING"
+                android:text="Babysitting"
+                android:textAlignment="viewStart"
                 android:textAllCaps="true"
                 android:textColor="@color/taskill_secondary_color"
                 android:textSize="20sp"
@@ -38,6 +39,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="46dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,10 +81,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="8dp"
+                android:src="@drawable/portrait_young_man_propping_chin_hand_black_t_shirt_looking_cheerful_front_view"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/portrait_young_man_propping_chin_hand_black_t_shirt_looking_cheerful_front_view" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -104,10 +116,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="8dp"
+                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -127,13 +139,13 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
+                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/profile_settings_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -162,10 +174,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
+                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -185,10 +197,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
+                android:src="@drawable/portrait_young_man_propping_chin_hand_black_t_shirt_looking_cheerful_front_view"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/portrait_young_man_propping_chin_hand_black_t_shirt_looking_cheerful_front_view" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -208,10 +220,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
+                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -233,10 +245,10 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="10dp"
+                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.taskill;
+package com.example.taskill.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +12,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.taskill.R;
+import com.example.taskill.data.ServiceUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -30,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +55,10 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                SendDataToFirebase();
                 PerformAuth();
-                //startActivity(new Intent(RegisterActivity.this,MainActivityBot.class));
-                //startActivity(new Intent(LogInActivity.this,MainActivity.class));
+
+
             }
         });
 
@@ -61,6 +69,22 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(RegisterActivity.this,LogInActivity.class));
             }
         });
+    }
+
+    private void SendDataToFirebase() {
+        rootNode=FirebaseDatabase.getInstance();
+        reference=rootNode.getReference("serviceUsers");
+
+        String email=inputEmail.getText().toString();
+        String password=inputPassword.getText().toString();
+
+        String name = "First";
+        String username = "firstusername";
+
+        ServiceUser newUser= new ServiceUser(name,username,email,password);
+
+        reference.child(username).setValue(newUser);
+
     }
 
     private void PerformAuth() {
