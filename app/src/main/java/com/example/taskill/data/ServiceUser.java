@@ -1,5 +1,6 @@
 package com.example.taskill.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceUser {
@@ -8,6 +9,7 @@ public class ServiceUser {
     public String username;
     public String email;
     public String password;
+    public List<Booking> bookings;
 
     public ServiceUser() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -18,6 +20,7 @@ public class ServiceUser {
         this.username = username;
         this.email = email;
         this.password=password;
+        bookings=new ArrayList<>();
     }
 
     public String getName() {
@@ -32,5 +35,16 @@ public class ServiceUser {
         return email;
     }
 
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public void addBooking(Booking booking){
+        bookings.add(booking);
+    }
 
 }

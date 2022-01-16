@@ -60,7 +60,7 @@
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/navigation_booking"
-        android:name="com.example.taskill.BookingFragment"
+        android:name="com.example.taskill.ui.BookingFragment"
         android:label="@string/title_booking_fragment"
         tools:layout="@layout/fragment_booking" />
 

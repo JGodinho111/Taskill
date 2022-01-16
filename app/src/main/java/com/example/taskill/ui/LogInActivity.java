@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -50,13 +52,13 @@ public class LogInActivity extends AppCompatActivity {
         mAuth= FirebaseAuth.getInstance();
         mUser= mAuth.getCurrentUser();
 
+        SharedPreferences sp= getApplicationContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+
         b = (Button)findViewById(R.id.buttonLogIn);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 performLogin();
-                //startActivity(new Intent(LogInActivity.this,MainActivityBot.class));
-                //startActivity(new Intent(LogInActivity.this,MainActivity.class));
             }
         });
 
@@ -72,7 +74,15 @@ public class LogInActivity extends AppCompatActivity {
         goToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LogInActivity.this,RegisterActivity.class));
+
+                String userType= sp.getString("type","");
+
+                if(userType.equals("service_provider")){
+                    startActivity(new Intent(LogInActivity.this,ServiceProviderRegisterActivity.class));
+                }
+                else{
+                    startActivity(new Intent(LogInActivity.this,RegisterActivity.class));
+                }
             }
         });
     }

@@ -1,52 +1,30 @@
-package com.example.taskill;
+package com.example.taskill.ui;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.os.Bundle;
-import android.text.InputType;
-import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentBookingBinding;
-import com.example.taskill.databinding.FragmentSettingsBinding;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.ListResult;
-import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.UUID;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Switch;
 
 
 /**
@@ -135,10 +113,14 @@ public class BookingFragment extends Fragment {
                                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
                                 String data = simpleDateFormat.format(calendar.getTime());
                                 textWithTime.setText(data);
-                                String path = "bookings/" + name + "/" + data;
-                                StorageReference ref = storage.getReference(path);
-                                UploadTask uploadTask = ref.putBytes(data.getBytes());
+                                //String path = "bookings/" + name + "/" + data;
+                                //StorageReference ref = storage.getReference(path);
+                                //UploadTask uploadTask = ref.putBytes(data.getBytes());
                                 //date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
+                                //Botão Confirmar--CHECK
+                                //Alterar Storage -> Real Time Database
+                                //Obter dados do Real Time Database
+                                //Verificar se já existe bookings com menos de uma hora de diferença
                             }
                         };
 
@@ -148,6 +130,19 @@ public class BookingFragment extends Fragment {
                 new DatePickerDialog(getActivity(),dateSetListener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+        Button confirm = (Button) root.findViewById(R.id.button_confirm);
+        confirm.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+            Bundle args = new Bundle();
+            String pathName = textWithTime.getText().toString();
+            if (pathName != "Data e Hora escolhida"){
+                String path = "bookings/" + name + "/" + pathName;
+                StorageReference ref = storage.getReference(path);
+                UploadTask uploadTask = ref.putBytes(pathName.getBytes());
+            }
+            navController.navigate(R.id.navigation_hireServicee, args);
+            });
+
         return root;
     }
 

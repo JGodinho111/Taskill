@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#20232A"
     android:backgroundTint="#20232A"
-    tools:context=".ui.RegisterActivity">
+    tools:context=".ui.ServiceProviderRegisterActivity">
 
     <Button
         android:id="@+id/buttonRegister"
@@ -151,4 +151,17 @@
         app:layout_constraintTop_toBottomOf="@+id/register_pasword"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:progressTint="@color/taskill_main_color"
+        android:rating="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="199dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
