@@ -11,10 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskill">
         <activity
+            android:name=".ui.ServiceProviderRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +28,8 @@
         </activity>
         <activity
             android:name=".ui.GoogleSignInActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ui.RegisterActivity"
             android:exported="true"
@@ -37,8 +43,7 @@
             android:name=".ui.LogInActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

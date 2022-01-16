@@ -37,15 +37,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    EditText inputName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        inputEmail=findViewById(R.id.editTextAddEmailAddress);
-        inputPassword=findViewById(R.id.editTextAddPassword);
-        inputConfirmPassword=findViewById(R.id.editTextAddConfirmPassword);
+        inputName=findViewById(R.id.register_name);
+        inputEmail=findViewById(R.id.register_email);
+        inputPassword=findViewById(R.id.register_pasword);
+        inputConfirmPassword=findViewById(R.id.register_confirmPassword);
         progressDialog= new ProgressDialog(this);
         mAuth= FirebaseAuth.getInstance();
         mUser= mAuth.getCurrentUser();
@@ -75,23 +77,25 @@ public class RegisterActivity extends AppCompatActivity {
         rootNode=FirebaseDatabase.getInstance();
         reference=rootNode.getReference("serviceUsers");
 
-        String email=inputEmail.getText().toString();
+        String name= inputName.getText().toString();
+        String emailAndUsername=inputEmail.getText().toString();
         String password=inputPassword.getText().toString();
 
-        String name = "First";
-        String username = "firstusername";
+        ServiceUser newUser= new ServiceUser(name,emailAndUsername,emailAndUsername,password);
 
-        ServiceUser newUser= new ServiceUser(name,username,email,password);
-
-        reference.child(username).setValue(newUser);
+        reference.child(emailAndUsername).setValue(newUser);
 
     }
 
     private void PerformAuth() {
+        String name= inputName.getText().toString();
         String email=inputEmail.getText().toString();
         String password=inputPassword.getText().toString();
         String confirmPassword=inputConfirmPassword.getText().toString();
 
+        if(name.isEmpty()){
+            inputName.setError("Insert valid Name!");
+        }
         if(!email.matches(emailPattern)){
             inputEmail.setError("Enter a valid Email!");
         }else if(password.isEmpty() || password.length()<6){

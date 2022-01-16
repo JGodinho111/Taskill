@@ -8,20 +8,20 @@ public class Booking {
     private String serviceProvider;
     private String serviceRequester;
     private String service;
-    private String date;
-    private String time;
+    private String dateAndTime;
+
     private BookingStatus status;
     private int price;
     private Location location;
     private Address address;
 
-    public Booking(Address address, String serviceProvider, String serviceRequester, String service, String date, String time, int price) {
+    public Booking(Address address, String serviceProvider, String serviceRequester, String service, String dateAndTime, int price) {
         this.address=address;
         this.serviceProvider = serviceProvider;
         this.serviceRequester = serviceRequester;
         this.service = service;
-        this.date = date;
-        this.time = time;
+        this.dateAndTime = dateAndTime;
+
         this.price = price;
         this.status=BookingStatus.UPCOMING;
     }
@@ -38,13 +38,10 @@ public class Booking {
         return service;
     }
 
-    public String getDate() {
-        return date;
+    public String getDateAndTime() {
+        return dateAndTime;
     }
 
-    public String getTime() {
-        return time;
-    }
 
     public int getPrice() {
         return price;

@@ -4,15 +4,26 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
+import com.example.taskill.databinding.FragmentHireBinding;
+import com.example.taskill.databinding.FragmentSettingsBinding;
+
+//<<<<<<< HEAD:app/src/main/java/com/example/taskill/ui/HireFragment.java
 import com.example.taskill.R;
 
+//=======
+//>>>>>>> booking:app/src/main/java/com/example/taskill/HireFragment.java
 import java.util.Calendar;
 
 /**
@@ -33,10 +44,11 @@ public class HireFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private View v = null;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private FragmentHireBinding binding;
 
     public HireFragment() {
         // Required empty public constructor
@@ -73,25 +85,19 @@ public class HireFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_hire, container, false);
-        Button bHireCalendar = (Button) v.findViewById(R.id.buttonHireCalendar);
-        bHireCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO - Abrir calendario com datas disponíveis e
-                // poder selecionar e avançar para o pagamento
-                DatePickerDialog datePickerDialog = new DatePickerDialog(((MainActivityBot)getActivity()), new DatePickerDialog.OnDateSetListener()
-                {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
-                    {
-                        //edittext.setText("" + dayOfMonth + " - " + (monthOfYear+1) + " - " + year)
+        v = inflater.inflate(R.layout.fragment_hire, container, false);
+        binding = FragmentHireBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        View bGoToBooking = root.findViewById(R.id.buttonBooking);
+        bGoToBooking.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+            Bundle args = new Bundle();
+            TextView textView = root.findViewById(R.id.textViewHireServiceeName);
+            args.putString("name", textView.getText().toString());
+            navController.navigate(R.id.navigation_booking, args);
         });
+
         Button bHireChat = (Button) v.findViewById(R.id.buttonHireChat);
         bHireChat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +109,6 @@ public class HireFragment extends Fragment {
             }
         });
 
-        return v;
+        return root;
     }
 }

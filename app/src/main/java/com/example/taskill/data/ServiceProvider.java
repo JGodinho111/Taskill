@@ -1,5 +1,6 @@
 package com.example.taskill.data;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ public class ServiceProvider {
     public String username;
     public String email;
     public String password;
+    public List<Booking> bookings;
 
     public Map<String,Integer> provided_services;
 
@@ -21,6 +23,7 @@ public class ServiceProvider {
         this.username = username;
         this.email = email;
         this.password=password;
+        bookings=new ArrayList<>();
     }
 
     public void addService(String service, int basePrice){
@@ -43,4 +46,15 @@ public class ServiceProvider {
         return provided_services;
     }
 
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public void addBooking(Booking booking){
+        bookings.add(booking);
+    }
 }
