@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home"
@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="#20232A"
     android:backgroundTint="#20232A"
+    android:fillViewport="true"
     tools:context=".ui.home.HomeFragment">
 
     <!--<TextView
@@ -36,308 +37,347 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_menu"/>-->
 
-    <TextView
-        android:id="@+id/services_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="28dp"
-        android:text="All Services"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/gridlayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categories"
-        app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/taskill_logo"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/taskill"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
-
-    <HorizontalScrollView
-        android:id="@+id/categories"
-        android:layout_width="393dp"
-        android:layout_height="77dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskill_logo"
-        tools:ignore="SpeakableTextPresentCheck">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/cleaning"
+                android:id="@+id/taskill_logo"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="14dp"
+                android:src="@drawable/taskill"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/profile_button"
+                android:layout_width="39dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="22dp"
+                android:src="@drawable/profile_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <TextView
+                android:id="@+id/services_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/cleaning_service_image"
-                android:src="@drawable/partycleaning" />
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/popular_services"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/categories"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/electrician"
+            <HorizontalScrollView
+                android:id="@+id/categories"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/cleaning"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/cleaning_service_image"
+                        android:src="@drawable/partycleaning" />
+
+                    <ImageView
+                        android:id="@+id/electrician"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/electrician" />
+
+                    <ImageView
+                        android:id="@+id/babysitting"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/babysitting_logo" />
+
+                    <ImageView
+                        android:id="@+id/lawncare2"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/lawncare"
+                        app:srcCompat="@drawable/carpenter" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="208dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/services_text2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:src="@drawable/electrician" />
+                android:layout_height="22dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="8dp"
+                android:text="All Services"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/babysitting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/babysitting_logo" />
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridlayout"
+                android:layout_width="317dp"
+                android:layout_height="440dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="19dp"
+                app:columnCount="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/services_text2"
+                app:layout_constraintVertical_bias="0.0"
+                app:rowCount="4">
 
-            <ImageView
-                android:id="@+id/lawncare2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/lawncare" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        </LinearLayout>
-    </HorizontalScrollView>
+                    <ImageView
+                        android:id="@+id/cleaning2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/cleaning_service_image"
+                        android:src="@drawable/partycleaning" />
 
-    <TextView
-        android:id="@+id/services_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/popular_services"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/categories"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskill_logo"
-        app:layout_constraintVertical_bias="0.535" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/profile_button"
-        android:layout_width="39dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/profile_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
-        app:layout_constraintStart_toEndOf="@+id/taskill_logo"
-        app:layout_constraintTop_toTopOf="parent" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridlayout"
-        android:layout_width="339dp"
-        android:layout_height="456dp"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:columnCount="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:rowCount="4">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/locksmith"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/locksmith" />
 
-            <ImageView
-                android:id="@+id/cleaning2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:contentDescription="@string/cleaning_service_image"
-                android:src="@drawable/partycleaning" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/plumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/plumber" />
 
-            <ImageView
-                android:id="@+id/locksmith"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/locksmith" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/lawncare"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/lawncare" />
 
-            <ImageView
-                android:id="@+id/plumber"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/plumber" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/electrician2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/electrician" />
 
-            <ImageView
-                android:id="@+id/lawncare"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/lawncare" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/babysitting2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/babysitting_logo" />
 
-            <ImageView
-                android:id="@+id/electrician2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/electrician" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/dogwalking2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/dog1" />
 
-            <ImageView
-                android:id="@+id/babysitting2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/babysitting_logo" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/taskill_main_color"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+                    <ImageView
+                        android:id="@+id/carpenter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/carpenter" />
 
-            <ImageView
-                android:id="@+id/dogwalking2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/dog1" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.gridlayout.widget.GridLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/taskill_main_color"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="0dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:id="@+id/carpenter"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/carpenter" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-    </androidx.gridlayout.widget.GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- TODO: Update blank fragment layout -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

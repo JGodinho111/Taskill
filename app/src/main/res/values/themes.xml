@@ -20,4 +20,13 @@
     <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
         <item name="android:src">@android:drawable/ic_menu_sort_by_size</item>
     </style>
+
+    <style name="Theme.Taskill.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Taskill.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Taskill.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

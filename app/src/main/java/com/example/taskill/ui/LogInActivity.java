@@ -37,6 +37,7 @@ public class LogInActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    SharedPreferences sp;
 
     @SuppressLint({"ResourceAsColor", "Range"})
     @Override
@@ -52,7 +53,7 @@ public class LogInActivity extends AppCompatActivity {
         mAuth= FirebaseAuth.getInstance();
         mUser= mAuth.getCurrentUser();
 
-        SharedPreferences sp= getApplicationContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        sp= getApplicationContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         b = (Button)findViewById(R.id.buttonLogIn);
         b.setOnClickListener(new View.OnClickListener() {
@@ -74,15 +75,7 @@ public class LogInActivity extends AppCompatActivity {
         goToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String userType= sp.getString("type","");
-
-                if(userType.equals("service_provider")){
-                    startActivity(new Intent(LogInActivity.this,ServiceProviderRegisterActivity.class));
-                }
-                else{
-                    startActivity(new Intent(LogInActivity.this,RegisterActivity.class));
-                }
+                startActivity(new Intent(LogInActivity.this,RegisterActivity.class));
             }
         });
     }
@@ -105,6 +98,12 @@ public class LogInActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+
+                        SharedPreferences.Editor editor= sp.edit();
+                        editor.putString("currentUser", email);
+                        editor.putString("password", password);
+                        editor.commit();
+
                         progressDialog.dismiss();
                         sendUserToNextActivity();
                         Toast.makeText(LogInActivity.this,"Login Successful!", Toast.LENGTH_SHORT).show();

@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.location.Address;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.taskill.R;
+import com.example.taskill.data.Booking;
+import com.example.taskill.data.ServiceProvider;
 import com.example.taskill.data.ServiceUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,6 +26,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -36,8 +45,12 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseUser mUser;
 
     FirebaseDatabase rootNode;
-    DatabaseReference reference;
+    DatabaseReference serviceUsersReference;
+    DatabaseReference serviceProvidersReference;
     EditText inputName;
+
+    SharedPreferences sp;
+    String userType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +64,9 @@ public class RegisterActivity extends AppCompatActivity {
         progressDialog= new ProgressDialog(this);
         mAuth= FirebaseAuth.getInstance();
         mUser= mAuth.getCurrentUser();
+
+        sp= getApplicationContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        userType= sp.getString("type","");
 
         b = (Button)findViewById(R.id.buttonRegister);
         b.setOnClickListener(new View.OnClickListener() {
@@ -74,17 +90,27 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void SendDataToFirebase() {
+
         rootNode=FirebaseDatabase.getInstance();
-        reference=rootNode.getReference("serviceUsers");
+        serviceUsersReference =rootNode.getReference("serviceUsers");
+        serviceProvidersReference =rootNode.getReference("serviceProviders");
 
         String name= inputName.getText().toString();
         String emailAndUsername=inputEmail.getText().toString();
         String password=inputPassword.getText().toString();
 
-        ServiceUser newUser= new ServiceUser(name,emailAndUsername,emailAndUsername,password);
 
-        reference.child(emailAndUsername).setValue(newUser);
+        if(userType.equals("service_provider")){
+            ServiceProvider newProvider= new ServiceProvider(name,emailAndUsername,emailAndUsername,password,new ArrayList<>());
+            serviceProvidersReference.child(name).setValue(newProvider);
+        }
 
+        else{
+            List<Booking> bookings= new ArrayList<>();
+            bookings.add(new Booking("Morada","ze","toni","baby","15/04/2022 15:56",20));
+            ServiceUser newUser= new ServiceUser(name,emailAndUsername,emailAndUsername,password,bookings);
+            serviceUsersReference.child(name).setValue(newUser);
+        }
     }
 
     private void PerformAuth() {
@@ -128,9 +154,17 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent= new Intent(RegisterActivity.this,MainActivityBot.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        if(userType.equals("service_provider")){
+            Intent intent= new Intent(RegisterActivity.this,ServiceProviderRegisterActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else{
+            Intent intent= new Intent(RegisterActivity.this,MainActivityBot.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
     }
 
 

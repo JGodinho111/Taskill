@@ -15,12 +15,12 @@ public class ServiceUser {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public ServiceUser(String name, String username, String email, String password) {
+    public ServiceUser(String name, String username, String email, String password, List<Booking> bookings) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.password=password;
-        bookings=new ArrayList<>();
+        this.bookings=bookings;
     }
 
     public String getName() {

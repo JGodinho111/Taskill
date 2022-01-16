@@ -13,15 +13,14 @@ public class Booking {
     private BookingStatus status;
     private int price;
     private Location location;
-    private Address address;
+    private String address;
 
-    public Booking(Address address, String serviceProvider, String serviceRequester, String service, String dateAndTime, int price) {
+    public Booking(String address, String serviceProvider, String serviceRequester, String service, String dateAndTime, int price) {
         this.address=address;
         this.serviceProvider = serviceProvider;
         this.serviceRequester = serviceRequester;
         this.service = service;
         this.dateAndTime = dateAndTime;
-
         this.price = price;
         this.status=BookingStatus.UPCOMING;
     }
@@ -67,11 +66,11 @@ public class Booking {
         this.location = location;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
