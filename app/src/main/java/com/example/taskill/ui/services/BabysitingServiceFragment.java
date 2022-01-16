@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentBabysitingServiceBinding;
@@ -29,7 +30,8 @@ public class BabysitingServiceFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private String service ;
+    EditText serviceText;
     private FragmentBabysitingServiceBinding binding;
 
     public BabysitingServiceFragment() {
@@ -45,9 +47,9 @@ public class BabysitingServiceFragment extends Fragment {
      * @return A new instance of fragment SingleServiceFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BabysitingServiceFragment newInstance(String param1, String param2) {
+    public BabysitingServiceFragment newInstance(String param1, String param2) {
         BabysitingServiceFragment fragment = new BabysitingServiceFragment();
-        Bundle args = new Bundle();
+        Bundle args = getArguments();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
@@ -60,34 +62,42 @@ public class BabysitingServiceFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            service = getArguments().getString("service");
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_babysiting_service, container, false);
-//TODO - Meter este ficheiro bem no formato Home/Dashboard/Notifications
         binding = FragmentBabysitingServiceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        //serviceText = root.findViewById(R.id.viewerBaby);
+        //serviceText.setText(service);
+        View v =  inflater.inflate(R.layout.fragment_babysiting_service, container, false);
+//TODO - Meter este ficheiro bem no formato Home/Dashboard/Notifications
+
 
         ConstraintLayout cServicee1 = root.findViewById(R.id.constraintLayoutSS1);
         cServicee1.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
+            args.putString("service", service);
             navController.navigate(R.id.navigation_hireServicee, args);
         });
         ConstraintLayout cServicee2 = root.findViewById(R.id.constraintLayoutSS2);
         cServicee2.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
+            args.putString("service", service);
             navController.navigate(R.id.navigation_hireServicee, args);
         });
         ConstraintLayout cServicee3 = root.findViewById(R.id.constraintLayoutSS3);
         cServicee3.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
+            args.putString("service", service);
             navController.navigate(R.id.navigation_hireServicee, args);
         });
 

@@ -48,6 +48,7 @@ public class HireFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String service;
     private FragmentHireBinding binding;
 
     public HireFragment() {
@@ -63,9 +64,9 @@ public class HireFragment extends Fragment {
      * @return A new instance of fragment HireFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HireFragment newInstance(String param1, String param2) {
+    public HireFragment newInstance(String param1, String param2) {
         HireFragment fragment = new HireFragment();
-        Bundle args = new Bundle();
+        Bundle args = getArguments();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
@@ -78,6 +79,7 @@ public class HireFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            service = getArguments().getString("service");
         }
     }
 
@@ -95,6 +97,7 @@ public class HireFragment extends Fragment {
             Bundle args = new Bundle();
             TextView textView = root.findViewById(R.id.textViewHireServiceeName);
             args.putString("name", textView.getText().toString());
+            args.putString("service", service);
             navController.navigate(R.id.navigation_booking, args);
         });
 

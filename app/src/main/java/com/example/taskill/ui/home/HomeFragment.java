@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment {
 
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
                 Bundle args = new Bundle();
+                args.putString("service","babysitting");
                 navController.navigate(R.id.navigation_babysiting_service, args);
             }
 
@@ -77,6 +78,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
                 Bundle args = new Bundle();
+                args.putString("service","babysitting");
                 navController.navigate(R.id.navigation_babysiting_service, args);
             }
 
