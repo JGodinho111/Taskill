@@ -58,32 +58,15 @@
 
 
             <TextView
-                android:id="@+id/textViewHireChat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="16dp"
-                android:text="If you want to book for a time not scheduled talk to the servicee:"
-                android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonBooking" />
-
-            <TextView
                 android:id="@+id/textViewHireServiceeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ana Maria"
                 android:textColor="#000000"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/imageView11"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.562"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.824" />
+                app:layout_constraintStart_toStartOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/aboutusperson" />
 
             <ImageView
                 android:id="@+id/aboutusperson"
@@ -98,92 +81,107 @@
 
             <TextView
                 android:id="@+id/textViewHireDescription"
-                android:layout_width="203dp"
-                android:layout_height="53dp"
-                android:layout_marginTop="44dp"
-                android:text="Babysitter e dog walker nos tempos livres!"
+                android:layout_width="346dp"
+                android:layout_height="230dp"
+                android:layout_marginTop="8dp"
+                android:text="Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.142"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aboutusperson" />
+                app:layout_constraintStart_toStartOf="@+id/textViewHireAbout"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout" />
 
             <TextView
-                android:id="@+id/textViewHireBio"
+                android:id="@+id/textViewHireAbout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bio"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/textViewHireDescription"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.072"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/aboutusperson" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="76dp"
-                android:src="@android:drawable/btn_star_big_on"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.343"
-                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="12dp"
-                android:layout_height="21dp"
-                android:layout_marginTop="84dp"
-                android:text="5"
+                android:text="About"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toStartOf="@+id/imageView11"
-                app:layout_constraintHorizontal_bias="0.785"
-                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/buttonHireChat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#20232A"
-                android:ems="17"
-                android:text="Chat"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHireChat"
-                app:layout_constraintVertical_bias="0.0" />
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/aboutusperson" />
 
             <Button
                 android:id="@+id/buttonBooking"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="#20232A"
                 android:ems="17"
-                android:text="Booking"
+                android:text="Book Now"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHireCalendar"
-                app:layout_constraintVertical_bias="0.09" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireDescription" />
 
             <TextView
-                android:id="@+id/textViewHireCalendar"
+                android:id="@+id/textViewHireDistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="This person has pre-set availabilty:"
-                android:textColor="#000000"
+                android:text="2.8 km"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHireDescription" />
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toTopOf="@+id/aboutusperson" />
+
+            <TextView
+                android:id="@+id/textViewHirePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="$9.50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAway" />
+
+            <TextView
+                android:id="@+id/textViewHireRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="4.1/5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireHour" />
+
+            <TextView
+                android:id="@+id/textViewHireAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Away"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireDistance" />
+
+            <TextView
+                android:id="@+id/textViewHireHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Per Hour"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHirePrice" />
+
+            <TextView
+                android:id="@+id/textViewHireAvgRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avg. Rating"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireRating" />
+
+            <TextView
+                android:id="@+id/textViewHireService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Babysitter"
+                app:layout_constraintStart_toStartOf="@+id/textViewHireServiceeName"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireServiceeName" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -101,7 +101,7 @@ public class HireFragment extends Fragment {
             navController.navigate(R.id.navigation_booking, args);
         });
 
-        Button bHireChat = (Button) v.findViewById(R.id.buttonHireChat);
+       /* Button bHireChat = (Button) v.findViewById(R.id.buttonHireChat);
         bHireChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +110,7 @@ public class HireFragment extends Fragment {
                 // que permite que o servicee crie novos blocos de disponibilidade dentro do chat
                 // para utilizadores poderem depois usar isso para marcar
             }
-        });
+        });*/
 
         return root;
     }
