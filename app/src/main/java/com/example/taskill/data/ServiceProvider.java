@@ -1,6 +1,6 @@
 package com.example.taskill.data;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,13 +12,13 @@ public class ServiceProvider {
     public String password;
     public List<Booking> bookings;
 
-    public Map<String,Double> provided_services;
+    public Map<String,Integer> provided_services;
 
     public ServiceProvider() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public ServiceProvider(String name, String username, String email,String password, List<Booking> bookings,Map<String,Double> provided_services) {
+    public ServiceProvider(String name, String username, String email, String password, List<Booking> bookings, Map<String,Integer> provided_services) {
         this.name = name;
         this.username = username;
         this.email = email;
@@ -27,7 +27,7 @@ public class ServiceProvider {
         this.provided_services=provided_services;
     }
 
-    public void addService(String service, double basePrice){
+    public void addService(String service, int basePrice){
         provided_services.put(service,basePrice);
     }
 
@@ -43,7 +43,7 @@ public class ServiceProvider {
         return email;
     }
 
-    public Map<String,Double> getProvided_services() {
+    public Map<String,Integer> getProvided_services() {
         return provided_services;
     }
 

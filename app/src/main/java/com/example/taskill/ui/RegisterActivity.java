@@ -7,7 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Address;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +33,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -112,18 +110,19 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(userType.equals("service_provider")){
             List<Booking> bookings= new ArrayList<>();
-            Map<String, Double> services_provided=new HashMap<>();
+            Map<String,Integer> services_provided=new HashMap<>();
 
-            bookings.add(new Booking());
-            services_provided.put("",0.0);
+            bookings.add(new Booking("","","","","",0));
 
-            ServiceProvider newProvider= new ServiceProvider(name,emailAndUsername,emailAndUsername,password,bookings,services_provided);
-            serviceProvidersReference.child(name).setValue(newProvider);
+            services_provided.put("teste",0);
+
+            ServiceProvider newProvider= new ServiceProvider(name,username,emailAndUsername,password,bookings,services_provided);
+            serviceProvidersReference.child(username).setValue(newProvider);
         }
 
         else{
             List<Booking> bookings= new ArrayList<>();
-            bookings.add(new Booking("Morada","ze","toni","baby","15/04/2022 15:56",20));
+            bookings.add(new Booking("","","","","",0));
             ServiceUser newUser= new ServiceUser(name,username,emailAndUsername,password,bookings);
             serviceUsersReference.child(username).setValue(newUser);
         }

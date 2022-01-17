@@ -27,6 +27,8 @@ public class ServicesChoiceActivity extends AppCompatActivity {
     EditText e_babysitting,e_dogwalking,e_plumber,e_lawncare,e_locksmith,e_cleaning,e_electrician,e_carpenter;
     Button confirm;
 
+    Map<String,Integer> servicesProvided;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +53,7 @@ public class ServicesChoiceActivity extends AppCompatActivity {
         e_electrician=findViewById(R.id.input_electrician);
         e_carpenter=findViewById(R.id.input_carpenter);
 
-        confirm= findViewById(R.id.button_confirm);
+        confirm= findViewById(R.id.sc_button);
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,37 +70,39 @@ public class ServicesChoiceActivity extends AppCompatActivity {
     }
 
     private void sendServicesToFirebase() {
-        Map<String,Double> servicesProvided= new HashMap<>();
+         servicesProvided= new HashMap<>();
 
         if(c_babysitting.isChecked())
-            servicesProvided.put("babysitting",Double.parseDouble(e_babysitting.getText().toString()));
+            servicesProvided.put("babysitting",Integer.parseInt(e_babysitting.getText().toString()));
 
 
         if(c_dogwalking.isChecked())
-            servicesProvided.put("dogwalking",Double.parseDouble(e_dogwalking.getText().toString()));
+            servicesProvided.put("dogwalking",Integer.parseInt(e_dogwalking.getText().toString()));
 
 
         if(c_lawncare.isChecked())
-            servicesProvided.put("lawncare",Double.parseDouble(e_lawncare.getText().toString()));
+            servicesProvided.put("lawncare",Integer.parseInt(e_lawncare.getText().toString()));
 
         if(c_locksmith.isChecked())
-            servicesProvided.put("locksmith",Double.parseDouble(e_locksmith.getText().toString()));
+            servicesProvided.put("locksmith",Integer.parseInt(e_locksmith.getText().toString()));
 
 
         if(c_plumber.isChecked())
-            servicesProvided.put("plumber",Double.parseDouble(e_plumber.getText().toString()));
+            servicesProvided.put("plumber",Integer.parseInt(e_plumber.getText().toString()));
 
 
         if(c_cleaning.isChecked())
-            servicesProvided.put("cleaning",Double.parseDouble(e_cleaning.getText().toString()));
+            servicesProvided.put("cleaning",Integer.parseInt(e_cleaning.getText().toString()));
 
 
         if(c_electrician.isChecked())
-            servicesProvided.put("electrician",Double.parseDouble(e_electrician.getText().toString()));
+            servicesProvided.put("electrician",Integer.parseInt(e_electrician.getText().toString()));
 
 
         if(c_carpenter.isChecked())
-            servicesProvided.put("carpenter",Double.parseDouble(e_carpenter.getText().toString()));
+            servicesProvided.put("carpenter",Integer.parseInt(e_carpenter.getText().toString()));
+
+
 
 
 

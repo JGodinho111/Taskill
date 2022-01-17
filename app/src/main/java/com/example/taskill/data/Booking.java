@@ -12,7 +12,6 @@ public class Booking {
 
     private BookingStatus status;
     private int price;
-    private Location location;
     private String address;
 
     public Booking(String address, String serviceProvider, String serviceRequester, String service, String dateAndTime, int price) {
@@ -60,14 +59,6 @@ public class Booking {
 
     public void setStatus(BookingStatus status) {
         this.status = status;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     public String getAddress() {
