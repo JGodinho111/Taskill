@@ -25,6 +25,10 @@ public class Booking {
         this.status=BookingStatus.UPCOMING;
     }
 
+    public Booking() {
+
+    }
+
     public String getServiceProvider() {
         return serviceProvider;
     }

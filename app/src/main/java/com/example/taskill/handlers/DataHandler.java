@@ -8,6 +8,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class DataHandler {
 
@@ -23,8 +24,8 @@ public class DataHandler {
         mDatabase.child("users").child(userId).setValue(user);
     }
 
-    public void writeNewServiceProvider(String userId, String name,String username, String email,String password, List<Booking> bookings) {
-        ServiceProvider user = new ServiceProvider(name,username,email,password,bookings);
+    public void writeNewServiceProvider(String userId, String name,String username, String email,String password, List<Booking> bookings, Map<String,Double> provided_services) {
+        ServiceProvider user = new ServiceProvider(name,username,email,password,bookings,provided_services);
         mDatabase.child("users").child(userId).setValue(user);
     }
 

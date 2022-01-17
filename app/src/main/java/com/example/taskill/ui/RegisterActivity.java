@@ -28,8 +28,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -101,13 +103,21 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         if(userType.equals("service_provider")){
-            ServiceProvider newProvider= new ServiceProvider(name,emailAndUsername,emailAndUsername,password,new ArrayList<>());
+
+            List<Booking> bookings= new ArrayList<>();
+            Map<String, Double> services_provided=new HashMap<>();
+
+            bookings.add(new Booking());
+            services_provided.put("",0.0);
+
+            ServiceProvider newProvider= new ServiceProvider(name,emailAndUsername,emailAndUsername,password,bookings,services_provided);
             serviceProvidersReference.child(name).setValue(newProvider);
         }
 
         else{
             List<Booking> bookings= new ArrayList<>();
-            bookings.add(new Booking("Morada","ze","toni","baby","15/04/2022 15:56",20));
+            bookings.add(new Booking());
+
             ServiceUser newUser= new ServiceUser(name,emailAndUsername,emailAndUsername,password,bookings);
             serviceUsersReference.child(name).setValue(newUser);
         }
