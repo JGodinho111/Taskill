@@ -10,21 +10,35 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentBabysitingServiceBinding;
 import com.example.taskill.ui.ServicesModel;
+import com.example.taskill.ui.ServicesModelAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,9 +53,9 @@ public class BabysitingServiceFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private RecyclerView mFirestoreList;
-    private FirebaseFirestore firebaseFirestore;
     private FirebaseDatabase firebaseDatabase;
-    private FirebaseRecyclerAdapter adapter;
+    private ServicesModelAdapter adapter;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -90,18 +104,28 @@ public class BabysitingServiceFragment extends Fragment {
         binding = FragmentBabysitingServiceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseFirestore = FirebaseFirestore.getInstance();
+
         mFirestoreList = root.findViewById(R.id.firestore_list);
 
+        mFirestoreList.setHasFixedSize(true);
+        mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())); // Insted of this since it's a fragment
 
         //Query
-        //Query query = firebaseFirestore.collection("serviceProviders"); //.limit() ; .order() ; ....
         DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders");
+
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()
                 .setQuery(query,ServicesModel.class)
                 .build();
+
+        adapter = new ServicesModelAdapter(options);
+
+        mFirestoreList.setAdapter(adapter);
+
+
+        /*
         adapter = new FirebaseRecyclerAdapter<ServicesModel, ServicesViewHolder>(options) {
 
             @NonNull
@@ -114,12 +138,11 @@ public class BabysitingServiceFragment extends Fragment {
             @Override
             protected void onBindViewHolder(@NonNull ServicesViewHolder holder, int position, @NonNull ServicesModel model) {
                 holder.list_name.setText(model.getName());
-                holder.list_email.setText(model.getEmail());
+                //holder.list_email.setText(model.getEmail());
             }
         };
-        mFirestoreList.setHasFixedSize(true);
-        mFirestoreList.setLayoutManager(new LinearLayoutManager(getContext())); // Insted of this since it's a fragment
-        mFirestoreList.setAdapter(adapter);
+         */
+
 
         //FirestoreRecyclerOptions<ServicesModel> options = new FirestoreRecyclerOptions.Builder<>();
         //View Holder
@@ -131,7 +154,7 @@ public class BabysitingServiceFragment extends Fragment {
 //TODO - Meter este ficheiro bem no formato Home/Dashboard/Notifications
 
 
-        ConstraintLayout cServicee1 = root.findViewById(R.id.constraintLayoutSS1);
+       /* ConstraintLayout cServicee1 = root.findViewById(R.id.constraintLayoutSS1);
         cServicee1.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
@@ -153,7 +176,7 @@ public class BabysitingServiceFragment extends Fragment {
             Bundle args = new Bundle();
             args.putString("service", service);
             navController.navigate(R.id.navigation_hireServicee, args);
-        });
+        });*/
 
         /*
         ConstraintLayout c = v.findViewById(R.id.constraintLayout2);
@@ -251,18 +274,21 @@ public class BabysitingServiceFragment extends Fragment {
         return root;
     }
 
+    /*
     private class ServicesViewHolder extends RecyclerView.ViewHolder{
 
         private TextView list_name;
-        private TextView list_email;
+        //private TextView list_email;
 
         public ServicesViewHolder(@NonNull View itemView) {
             super(itemView);
 
             list_name = itemView.findViewById(R.id.list_name);
-            list_email = itemView.findViewById(R.id.list_email);
+            //list_email = itemView.findViewById(R.id.list_email);
         }
     }
+
+     */
 
     @Override
     public void onStop(){
