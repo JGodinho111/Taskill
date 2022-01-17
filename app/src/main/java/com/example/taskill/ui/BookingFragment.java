@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.location.Address;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,8 +25,12 @@ import com.example.taskill.R;
 import com.example.taskill.data.Booking;
 import com.example.taskill.data.ServiceUser;
 import com.example.taskill.databinding.FragmentBookingBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -171,17 +176,37 @@ public class BookingFragment extends Fragment {
         //4-Adicionar o novo booking
         //5-Voltar a enviar para a BD
         database=FirebaseDatabase.getInstance();
-        reference=database.getReference("serviceUsers");
+        reference=database.getReference();
         String address = "morada";
-        String serviceRequester = sp.getString("currentUser","");
-        String serviceProvider = name;
-        String dateAndTime = pathName;
-        String password = sp.getString("password","");
-        List<Booking> bookingList = new ArrayList<>();
-        Booking newBooking= new Booking(address, serviceProvider, serviceRequester, service, dateAndTime,5);
-        ServiceUser newUser= new ServiceUser("Macedo",serviceRequester,serviceRequester,password,bookingList);
-        newUser.addBooking(newBooking);
-        reference.child("Macedo").setValue(newUser);
+        String serviceRequester = sp.getString("user","");
+        //String name = "aaaaaa";
+        //String email = "aaaaaa@gmail.com";
+        //String password = "default";
+        Query query = reference.orderByChild("serviceUsers").equalTo(serviceRequester);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String name = snapshot.child(serviceRequester).child("name").getValue(String.class);
+                    String email = snapshot.child(serviceRequester).child("email").getValue(String.class);
+                    String password = snapshot.child(serviceRequester).child("password").getValue(String.class);
+                    String serviceProvider = name;
+                    String dateAndTime = pathName;
+                    //String password = sp.getString("password","");
+                    List<Booking> bookingList = new ArrayList<>();
+                    Booking newBooking= new Booking(address, serviceProvider, serviceRequester, service, dateAndTime,5);
+                    ServiceUser newUser= new ServiceUser(name,serviceRequester,email,password,bookingList);
+                    newUser.addBooking(newBooking);
+                    reference.child("serviceUsers").child(serviceRequester).setValue(newUser);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
     }
 
