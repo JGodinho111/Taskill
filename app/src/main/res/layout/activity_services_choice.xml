@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#20232A"
     android:backgroundTint="#20232A"
-    tools:context=".ui.ServiceProviderRegisterActivity">
+    tools:context=".ui.ServicesChoiceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -95,13 +95,15 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox6"
+                        android:id="@+id/checkBox_babysitting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -120,7 +122,7 @@
                         app:srcCompat="@drawable/babysitting_logo" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/input_babysitting"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -130,7 +132,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox6"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_babysitting"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -140,20 +142,22 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox10"
+                        android:id="@+id/checkBox_dogwalking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.516" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal2"
+                        android:id="@+id/input_dogwalking"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -163,7 +167,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox10"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_dogwalking"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
 
@@ -187,20 +191,22 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox11"
+                        android:id="@+id/checkBox_lawncare"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.516" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal3"
+                        android:id="@+id/input_lawncare"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -210,7 +216,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox11"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_lawncare"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
 
@@ -233,20 +239,22 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox12"
+                        android:id="@+id/checkBox_plumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.516" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal4"
+                        android:id="@+id/input_plumber"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -256,7 +264,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox12"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_plumber"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
 
@@ -279,20 +287,22 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox13"
+                        android:id="@+id/checkBox_cleaning"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.516" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal5"
+                        android:id="@+id/input_cleaning"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -302,7 +312,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox13"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_cleaning"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
 
@@ -326,20 +336,22 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox14"
+                        android:id="@+id/checkBox_locksmith"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.516" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal6"
+                        android:id="@+id/input_locksmith"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -349,7 +361,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox14"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_locksmith"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
 
@@ -371,7 +383,7 @@
                     android:layout_height="91dp">
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal10"
+                        android:id="@+id/input_electrician"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginTop="12dp"
@@ -382,18 +394,20 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox15"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_electrician"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.29" />
 
                     <CheckBox
-                        android:id="@+id/checkBox15"
+                        android:id="@+id/checkBox_electrician"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -417,13 +431,15 @@
                     android:layout_height="91dp">
 
                     <CheckBox
-                        android:id="@+id/checkBox16"
+                        android:id="@+id/checkBox_carpenter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="37dp"
                         android:buttonTint="@color/white"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -441,7 +457,7 @@
                         app:srcCompat="@drawable/carpenter" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal7"
+                        android:id="@+id/input_carpenter"
                         android:layout_width="105dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="96dp"
@@ -451,7 +467,7 @@
                         android:textColor="@color/taskill_main_color"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/checkBox16"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBox_carpenter"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.488" />
 
@@ -463,5 +479,3 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
-
-

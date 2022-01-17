@@ -4,7 +4,7 @@ public class ServicesModel {
 
     private String name;
     private String email;
-    private String services;
+    //private String services;
 
     private ServicesModel(){}
 
@@ -29,7 +29,7 @@ public class ServicesModel {
     public void setEmail(String email) {
         this.email = email;
     }
-
+/*
     public String getServices() {
         return services;
     }
@@ -37,4 +37,5 @@ public class ServicesModel {
     public void setServices(String services) {
         this.services = services;
     }
+ */
 }
