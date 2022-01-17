@@ -195,7 +195,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void sendUserToNextActivity() {
         if(userType.equals("service_provider")){
-            Intent intent= new Intent(RegisterActivity.this,ServiceProviderRegisterActivity.class);
+            Intent intent= new Intent(RegisterActivity.this,ServicesChoiceActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
