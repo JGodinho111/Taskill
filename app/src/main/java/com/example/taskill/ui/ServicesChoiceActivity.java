@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.taskill.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,6 +23,8 @@ public class ServicesChoiceActivity extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
     DatabaseReference serviceProvidersReference;
+
+    FirebaseAuth mAuth;
 
     CheckBox c_babysitting,c_dogwalking,c_plumber,c_lawncare,c_locksmith,c_cleaning,c_electrician,c_carpenter;
     EditText e_babysitting,e_dogwalking,e_plumber,e_lawncare,e_locksmith,e_cleaning,e_electrician,e_carpenter;
@@ -65,46 +68,53 @@ public class ServicesChoiceActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     private void sendServicesToFirebase() {
+
          servicesProvided= new HashMap<>();
 
-        if(c_babysitting.isChecked())
+         verifyCheckboxesAndInputs(servicesProvided);
+
+         rootNode=FirebaseDatabase.getInstance();
+         serviceProvidersReference =rootNode.getReference("serviceProviders");
+         mAuth= FirebaseAuth.getInstance();
+         String currentUserId = mAuth.getCurrentUser().getUid();
+
+         serviceProvidersReference.child(currentUserId).child("provided_services").setValue(servicesProvided);
+
+    }
+
+    private void verifyCheckboxesAndInputs(Map<String, Integer> servicesProvided) {
+
+        if(c_babysitting.isChecked() && !e_babysitting.getText().toString().equals(""))
             servicesProvided.put("babysitting",Integer.parseInt(e_babysitting.getText().toString()));
 
 
-        if(c_dogwalking.isChecked())
+        if(c_dogwalking.isChecked() && !e_dogwalking.getText().toString().equals(""))
             servicesProvided.put("dogwalking",Integer.parseInt(e_dogwalking.getText().toString()));
 
 
-        if(c_lawncare.isChecked())
+        if(c_lawncare.isChecked() && !e_lawncare.getText().toString().equals(""))
             servicesProvided.put("lawncare",Integer.parseInt(e_lawncare.getText().toString()));
 
-        if(c_locksmith.isChecked())
+        if(c_locksmith.isChecked() && !e_locksmith.getText().toString().equals(""))
             servicesProvided.put("locksmith",Integer.parseInt(e_locksmith.getText().toString()));
 
 
-        if(c_plumber.isChecked())
+        if(c_plumber.isChecked() && !e_plumber.getText().toString().equals(""))
             servicesProvided.put("plumber",Integer.parseInt(e_plumber.getText().toString()));
 
 
-        if(c_cleaning.isChecked())
+        if(c_cleaning.isChecked() && !e_cleaning.getText().toString().equals(""))
             servicesProvided.put("cleaning",Integer.parseInt(e_cleaning.getText().toString()));
 
 
-        if(c_electrician.isChecked())
+        if(c_electrician.isChecked() && !e_electrician.getText().toString().equals(""))
             servicesProvided.put("electrician",Integer.parseInt(e_electrician.getText().toString()));
 
 
-        if(c_carpenter.isChecked())
+        if(c_carpenter.isChecked() && !e_carpenter.getText().toString().equals(""))
             servicesProvided.put("carpenter",Integer.parseInt(e_carpenter.getText().toString()));
-
-
-
-
-
     }
 }

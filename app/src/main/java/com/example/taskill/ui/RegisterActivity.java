@@ -80,8 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                SendDataToFirebase();
                 PerformAuth();
+                SendDataToFirebase();
 
 
             }
@@ -99,8 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
     private void SendDataToFirebase() {
 
         rootNode=FirebaseDatabase.getInstance();
-        serviceUsersReference =rootNode.getReference("serviceUsers");
         serviceProvidersReference =rootNode.getReference("serviceProviders");
+        serviceUsersReference =rootNode.getReference("serviceUsers");
 
         String name= inputName.getText().toString();
         String username = inputUsername.getText().toString();
@@ -117,14 +117,14 @@ public class RegisterActivity extends AppCompatActivity {
             services_provided.put("teste",0);
 
             ServiceProvider newProvider= new ServiceProvider(name,username,emailAndUsername,password,bookings,services_provided);
-            serviceProvidersReference.child(username).setValue(newProvider);
+            serviceProvidersReference.child(mAuth.getCurrentUser().getUid()).setValue(newProvider);
         }
 
         else{
             List<Booking> bookings= new ArrayList<>();
             bookings.add(new Booking("","","","","",0));
             ServiceUser newUser= new ServiceUser(name,username,emailAndUsername,password,bookings);
-            serviceUsersReference.child(username).setValue(newUser);
+            serviceUsersReference.child(mAuth.getCurrentUser().getUid()).setValue(newUser);
         }
     }
 
@@ -177,9 +177,23 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         progressDialog.dismiss();
-
-                        sendUserToNextActivity();
                         Toast.makeText(RegisterActivity.this,"Registration Successful", Toast.LENGTH_SHORT).show();
+                        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+
+                                    progressDialog.dismiss();
+                                    sendUserToNextActivity();
+                                    Toast.makeText(RegisterActivity.this,"Login Successful!", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    progressDialog.dismiss();
+                                    Toast.makeText(RegisterActivity.this,""+task.getException(),Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        });
+
                     }else{
                         progressDialog.dismiss();
                         Toast.makeText(RegisterActivity.this,""+task.getException(),Toast.LENGTH_SHORT).show();
