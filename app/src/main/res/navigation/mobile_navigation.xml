@@ -17,11 +17,11 @@
         android:label="@string/title_services"
         tools:layout="@layout/fragment_dashboard" />
 
-   <!-- <fragment
+   <fragment
         android:id="@+id/navigation_marketplace"
         android:name="com.example.taskill.ui.notifications.NotificationsFragment"
         android:label="@string/title_marketplace"
-        tools:layout="@layout/fragment_marketplace" />-->
+        tools:layout="@layout/fragment_marketplace" />
 
     <fragment
         android:id="@+id/navigation_profile"

@@ -14,12 +14,17 @@ import androidx.navigation.Navigation;
 
 import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentHomeBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 //Uses Menu Fragment
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+    private String activeUserId;
+
+    FirebaseAuth mAuth;
 
     ImageView btn_profile;
     ImageView btn_pbabysiting;
@@ -45,6 +50,9 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        mAuth= FirebaseAuth.getInstance();
+        activeUserId= mAuth.getCurrentUser().getUid();
+
         btn_profile=root.findViewById(R.id.profile_button);
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +60,7 @@ public class HomeFragment extends Fragment {
 
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
                 Bundle args = new Bundle();
+                args.putString("activeUserId",activeUserId);
                 navController.navigate(R.id.navigation_profile, args);
             }
 

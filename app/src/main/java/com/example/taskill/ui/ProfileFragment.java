@@ -2,15 +2,24 @@ package com.example.taskill.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentHireBinding;
 import com.example.taskill.databinding.FragmentProfileBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +34,16 @@ public class ProfileFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private View v = null;
     private FragmentProfileBinding binding;
+    private String activeUserId;
+
+    String emailFromDB;
+    String nameFromDB;
+    String usernameFromDB;
+
+    private String currentUserId;
+
+    FirebaseAuth mAuth;
+
 
 
     // TODO: Rename and change types of parameters
@@ -59,6 +78,7 @@ public class ProfileFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            activeUserId = getArguments().getString("activeUserId");
         }
     }
 
@@ -69,6 +89,35 @@ public class ProfileFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        mAuth= FirebaseAuth.getInstance();
+        currentUserId= mAuth.getCurrentUser().getUid();
+
+        TextView nameToShow = root.findViewById(R.id.profile_username);
+        TextView emailToShow = root.findViewById(R.id.profile_email);
+
+        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
+        Query query = serviceProvidersRef.child(currentUserId);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                    emailFromDB = userSnapshot.child("email").getValue(String.class);
+                    nameFromDB = userSnapshot.child("name").getValue(String.class);
+                    usernameFromDB = userSnapshot.child("username").getValue(String.class);
+                    nameToShow.setText(nameFromDB);
+                    emailToShow.setText(emailFromDB);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                throw databaseError.toException();
+            }
+        });
+
+        nameToShow.setText(currentUserId);
+        emailToShow.setText(emailFromDB);
 
         return root;
     }

@@ -32,9 +32,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 
 import org.w3c.dom.Text;
 
@@ -120,9 +120,12 @@ public class BabysitingServiceFragment extends Fragment {
         //Query
         DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders");
 
+        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
+        Query query2 = serviceProvidersRef.orderByChild("services").equalTo("babysitting");
+
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()
-                .setQuery(query,ServicesModel.class)
+                .setQuery(query2,ServicesModel.class)
                 .build();
 
 
