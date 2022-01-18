@@ -85,6 +85,115 @@ public class HomeFragment extends Fragment {
 
         });
 
+        btn_carpenter=root.findViewById(R.id.carpenter);
+        btn_carpenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","carpenter");
+                navController.navigate(R.id.navigation_carpenter_service, args);
+            }
+        });
+
+        btn_pcleaning=root.findViewById(R.id.cleaning);
+        btn_pcleaning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","cleaning");
+                navController.navigate(R.id.navigation_cleaning_service, args);
+            }
+        });
+
+        btn_cleaning=root.findViewById(R.id.cleaning2);
+        btn_cleaning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","cleaning");
+                navController.navigate(R.id.navigation_cleaning_service, args);
+            }
+        });
+
+        btn_pelectrician=root.findViewById(R.id.electrician);
+        btn_pelectrician.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","electrician");
+                navController.navigate(R.id.navigation_electrician_service, args);
+            }
+        });
+
+        btn_electrician=root.findViewById(R.id.electrician2);
+        btn_electrician.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","electrician");
+                navController.navigate(R.id.navigation_electrician_service, args);
+            }
+        });
+
+        btn_plawncare=root.findViewById(R.id.lawncare2);
+        btn_plawncare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","lawncare");
+                navController.navigate(R.id.navigation_lawncare_service, args);
+            }
+        });
+
+        btn_lawncare=root.findViewById(R.id.lawncare);
+        btn_lawncare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","lawncare");
+                navController.navigate(R.id.navigation_lawncare_service, args);
+            }
+        });
+
+        btn_locksmith=root.findViewById(R.id.locksmith);
+        btn_locksmith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","locksmith");
+                navController.navigate(R.id.navigation_locksmith_service, args);
+            }
+        });
+
+        btn_plumber=root.findViewById(R.id.plumber);
+        btn_plumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","plumber");
+                navController.navigate(R.id.navigation_plumber_service, args);
+            }
+        });
+
+        btn_dogwalking=root.findViewById(R.id.dogwalking2);
+        btn_dogwalking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                args.putString("service","dogwalking");
+                navController.navigate(R.id.navigation_dogwalking_service, args);
+            }
+        });
 
 
 //        View bServices = root.findViewById(R.id.imageButtonServices);

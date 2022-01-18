@@ -19,52 +19,57 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/firestore_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="68dp"
+            android:layout_marginBottom="56dp"
             android:background="#fff"
+            android:backgroundTint="@color/taskill_secondary_color"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout" />
+            app:layout_constraintTop_toBottomOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-             android:id="@+id/constraintLayout"
-             android:layout_width="match_parent"
-             android:layout_height="68dp"
-             android:background="@color/taskill_main_color"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="parent">
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@color/taskill_main_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-             <TextView
-                 android:id="@+id/textHeaderView2"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:fontFamily="sans-serif-smallcaps"
-                 android:text="Babysitting"
-                 android:textAlignment="viewStart"
-                 android:textAllCaps="true"
-                 android:textColor="@color/taskill_secondary_color"
-                 android:textSize="20sp"
-                 android:textStyle="bold"
-                 app:layout_constraintBottom_toBottomOf="parent"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textHeaderView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Babysitting"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textColor="@color/taskill_secondary_color"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-             <ImageView
-                 android:id="@+id/imageBackView2"
-                 android:layout_width="46dp"
-                 android:layout_height="30dp"
-                 app:layout_constraintBottom_toBottomOf="parent"
-                 app:layout_constraintEnd_toStartOf="@+id/textHeaderView2"
-                 app:layout_constraintHorizontal_bias="0.15"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent"
-                 app:srcCompat="?attr/actionModeCloseDrawable" />
+            <ImageView
+                android:id="@+id/imageBackView2"
+                android:layout_width="46dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textHeaderView2"
+                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
 
-        <!-- </androidx.constraintlayout.widget.ConstraintLayout>
-
-         <androidx.constraintlayout.widget.ConstraintLayout
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
+        <!--  <androidx.constraintlayout.widget.ConstraintLayout
              android:id="@+id/constraintLayoutSS1"
              android:layout_width="match_parent"
              android:layout_height="120dp"
@@ -270,8 +275,6 @@
                  android:src="@drawable/young_beautiful_woman_pink_warm_sweater_natural_look_smiling_portrait_isolated_long_hair"
                  app:layout_constraintBottom_toBottomOf="parent"
                  app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent" />-->
+                 app:layout_constraintTop_toTopOf="parent" />
          </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</RelativeLayout>
+-->

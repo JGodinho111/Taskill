@@ -3,6 +3,7 @@ package com.example.taskill.ui.services;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -61,8 +62,12 @@ public class BabysitingServiceFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private String service ;
+
+    private String name;
     EditText serviceText;
     private FragmentBabysitingServiceBinding binding;
+
+    ArrayList<String> listOfNames = new ArrayList<>();
 
     public BabysitingServiceFragment() {
         // Required empty public constructor
@@ -120,7 +125,8 @@ public class BabysitingServiceFragment extends Fragment {
                 .setQuery(query,ServicesModel.class)
                 .build();
 
-        adapter = new ServicesModelAdapter(options);
+
+        adapter = new ServicesModelAdapter(options,getContext());
 
         mFirestoreList.setAdapter(adapter);
 
@@ -153,7 +159,24 @@ public class BabysitingServiceFragment extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_babysiting_service, container, false);
 //TODO - Meter este ficheiro bem no formato Home/Dashboard/Notifications
 
+        //root.findViewById()
+        //mFirestoreList.getAdapter().getItemId();
+        //CardView cardView = root.findViewById(R.id.cardViewSingleProvider);
+        /*mFirestoreList.setOnClickListener(view -> {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
+                Bundle args = new Bundle();
+                //String nameOfProvider = root.findViewById(R.id.list_name).toString();
+                //args.putString(nameOfProvider,name);
+                args.putString("service", service);
+                navController.navigate(R.id.navigation_hireServicee, args);
+        });*/
 
+        /*cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });*/
        /* ConstraintLayout cServicee1 = root.findViewById(R.id.constraintLayoutSS1);
         cServicee1.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);

@@ -149,6 +149,14 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_single_service_babysitting">Babysitters</string>
+    <string name="title_single_service_carpenter">Carpenters</string>
+    <string name="title_single_service_cleaning">Cleaners</string>
+    <string name="title_single_service_locksmith">Locksmithers</string>
+    <string name="title_single_service_lawncare">Lawncarers</string>
+    <string name="title_single_service_dogwalking">Dog Walkers</string>
+    <string name="title_single_service_electrician">Electricists</string>
+    <string name="title_single_service_plumber">Plumbers</string>
     >>>>>>> booking
 
 </resources>

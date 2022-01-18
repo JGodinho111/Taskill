@@ -17,11 +17,11 @@
         android:label="@string/title_services"
         tools:layout="@layout/fragment_dashboard" />
 
-    <fragment
+   <!-- <fragment
         android:id="@+id/navigation_marketplace"
         android:name="com.example.taskill.ui.notifications.NotificationsFragment"
         android:label="@string/title_marketplace"
-        tools:layout="@layout/fragment_marketplace" />
+        tools:layout="@layout/fragment_marketplace" />-->
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -44,8 +44,50 @@
     <fragment
         android:id="@+id/navigation_babysiting_service"
         android:name="com.example.taskill.ui.services.BabysitingServiceFragment"
-        android:label="@string/title_single_service"
+        android:label="@string/title_single_service_babysitting"
         tools:layout="@layout/fragment_babysiting_service" />
+
+    <fragment
+        android:id="@+id/navigation_carpenter_service"
+        android:name="com.example.taskill.ui.services.CarpenterServiceFragment"
+        android:label="@string/title_single_service_carpenter"
+        tools:layout="@layout/fragment_carpenter_service" />
+
+    <fragment
+        android:id="@+id/navigation_cleaning_service"
+        android:name="com.example.taskill.ui.services.CleaningServiceFragment"
+        android:label="@string/title_single_service_cleaning"
+        tools:layout="@layout/fragment_cleaning_service" />
+
+    <fragment
+        android:id="@+id/navigation_locksmith_service"
+        android:name="com.example.taskill.ui.services.LockSmithServiceFragment"
+        android:label="@string/title_single_service_locksmith"
+        tools:layout="@layout/fragment_lock_smith_service" />
+
+    <fragment
+        android:id="@+id/navigation_lawncare_service"
+        android:name="com.example.taskill.ui.services.LawncareServiceFragment"
+        android:label="@string/title_single_service_lawncare"
+        tools:layout="@layout/fragment_lawncare_service" />
+
+    <fragment
+        android:id="@+id/navigation_dogwalking_service"
+        android:name="com.example.taskill.ui.services.DogWalkingFragment"
+        android:label="@string/title_single_service_dogwalking"
+        tools:layout="@layout/fragment_dog_walking" />
+
+    <fragment
+        android:id="@+id/navigation_electrician_service"
+        android:name="com.example.taskill.ui.services.ElectricianServiceFragment"
+        android:label="@string/title_single_service_electrician"
+        tools:layout="@layout/fragment_electrician_service" />
+
+    <fragment
+        android:id="@+id/navigation_plumber_service"
+        android:name="com.example.taskill.ui.services.PlumberServiceFragment"
+        android:label="@string/title_single_service_plumber"
+        tools:layout="@layout/fragment_plumber_service" />
 
     <fragment
         android:id="@+id/navigation_hireServicee"

@@ -73,11 +73,12 @@
                 android:layout_width="135dp"
                 android:layout_height="146dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.105"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/profile_button" />
+            <!--android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction" -->
 
             <TextView
                 android:id="@+id/textViewHireDescription"
