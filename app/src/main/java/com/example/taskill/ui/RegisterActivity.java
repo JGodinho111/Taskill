@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     FirebaseAuth mAuth;
-    FirebaseUser mUser;
+    //FirebaseUser mUser;
 
     FirebaseDatabase rootNode;
     DatabaseReference serviceUsersReference;
@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         inputConfirmPassword=findViewById(R.id.register_confirmPassword);
         progressDialog= new ProgressDialog(this);
         mAuth= FirebaseAuth.getInstance();
-        mUser= mAuth.getCurrentUser();
+        //mUser= mAuth.getCurrentUser();
 
         sp= getApplicationContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
         userType= sp.getString("type","");
@@ -81,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 PerformAuth();
-                SendDataToFirebase();
+                //SendDataToFirebase();
 
 
             }
@@ -178,6 +178,11 @@ public class RegisterActivity extends AppCompatActivity {
                     if(task.isSuccessful()){
                         progressDialog.dismiss();
                         Toast.makeText(RegisterActivity.this,"Registration Successful", Toast.LENGTH_SHORT).show();
+
+                        SendDataToFirebase();
+                        sendUserToNextActivity();
+                        Toast.makeText(RegisterActivity.this,"Login Successful!", Toast.LENGTH_SHORT).show();
+                        /*
                         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -192,7 +197,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 }
                             }
-                        });
+                        });*/
 
                     }else{
                         progressDialog.dismiss();

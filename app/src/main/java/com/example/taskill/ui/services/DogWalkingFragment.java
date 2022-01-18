@@ -6,19 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskill.R;
-import com.example.taskill.databinding.FragmentCarpenterServiceBinding;
 import com.example.taskill.databinding.FragmentDogWalkingBinding;
 import com.example.taskill.ui.ServicesModel;
 import com.example.taskill.ui.ServicesModelAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class DogWalkingFragment extends Fragment {
 
@@ -89,14 +87,17 @@ public class DogWalkingFragment extends Fragment {
         mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())); // Instead of this since it's a fragment
 
         //Query
-        DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders");
+        //DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders").child("provided_services");
+
+        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
+        Query query = serviceProvidersRef.orderByChild("dogwalking");
 
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()
                 .setQuery(query,ServicesModel.class)
                 .build();
 
-        adapter = new ServicesModelAdapter(options,getContext());
+        adapter = new ServicesModelAdapter(options,getContext(), "dogwalking");
 
         mFirestoreList.setAdapter(adapter);
 

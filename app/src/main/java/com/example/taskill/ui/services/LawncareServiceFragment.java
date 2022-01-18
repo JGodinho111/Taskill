@@ -6,20 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskill.R;
-import com.example.taskill.databinding.FragmentCarpenterServiceBinding;
-import com.example.taskill.databinding.FragmentElectricianServiceBinding;
 import com.example.taskill.databinding.FragmentLawncareServiceBinding;
 import com.example.taskill.ui.ServicesModel;
 import com.example.taskill.ui.ServicesModelAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class LawncareServiceFragment extends Fragment {
 
@@ -88,14 +85,16 @@ public class LawncareServiceFragment extends Fragment {
         mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())); // Instead of this since it's a fragment
 
         //Query
-        DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders");
+        DatabaseReference serviceProvidersRef = firebaseDatabase.getReference().child("serviceProviders");
+        Query query = serviceProvidersRef;
+
 
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()
                 .setQuery(query,ServicesModel.class)
                 .build();
 
-        adapter = new ServicesModelAdapter(options,getContext());
+        adapter = new ServicesModelAdapter(options,getContext(), "lawncare");
 
         mFirestoreList.setAdapter(adapter);
 

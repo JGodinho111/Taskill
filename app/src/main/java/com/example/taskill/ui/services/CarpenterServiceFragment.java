@@ -6,15 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskill.R;
-import com.example.taskill.databinding.FragmentBabysitingServiceBinding;
 import com.example.taskill.databinding.FragmentCarpenterServiceBinding;
 import com.example.taskill.ui.ServicesModel;
 import com.example.taskill.ui.ServicesModelAdapter;
@@ -96,7 +91,7 @@ public class CarpenterServiceFragment extends Fragment {
                 .setQuery(query,ServicesModel.class)
                 .build();
 
-        adapter = new ServicesModelAdapter(options,getContext());
+        adapter = new ServicesModelAdapter(options,getContext(), "carpenter");
 
         mFirestoreList.setAdapter(adapter);
 

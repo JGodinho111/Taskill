@@ -120,16 +120,16 @@ public class BabysitingServiceFragment extends Fragment {
         //Query
         DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders");
 
-        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
-        Query query2 = serviceProvidersRef.orderByChild("services").equalTo("babysitting");
+        //DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
+        //Query query2 = serviceProvidersRef.child("provided_services").equalTo("babysitting");
 
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()
-                .setQuery(query2,ServicesModel.class)
+                .setQuery(query,ServicesModel.class)
                 .build();
 
 
-        adapter = new ServicesModelAdapter(options,getContext());
+        adapter = new ServicesModelAdapter(options,getContext(),"babysitting");
 
         mFirestoreList.setAdapter(adapter);
 

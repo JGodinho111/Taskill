@@ -1,5 +1,7 @@
 package com.example.taskill.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +16,7 @@ import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentHireBinding;
 import com.example.taskill.databinding.FragmentProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,6 +46,8 @@ public class ProfileFragment extends Fragment {
     private String currentUserId;
 
     FirebaseAuth mAuth;
+    SharedPreferences sp;
+
 
 
 
@@ -91,33 +96,66 @@ public class ProfileFragment extends Fragment {
         View root = binding.getRoot();
 
         mAuth= FirebaseAuth.getInstance();
-        currentUserId= mAuth.getCurrentUser().getUid();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        currentUserId= firebaseUser.getUid();
 
         TextView nameToShow = root.findViewById(R.id.profile_username);
         TextView emailToShow = root.findViewById(R.id.profile_email);
 
-        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
-        Query query = serviceProvidersRef.child(currentUserId);
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                    emailFromDB = userSnapshot.child("email").getValue(String.class);
-                    nameFromDB = userSnapshot.child("name").getValue(String.class);
-                    usernameFromDB = userSnapshot.child("username").getValue(String.class);
-                    nameToShow.setText(nameFromDB);
-                    emailToShow.setText(emailFromDB);
+        sp=getActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        String userType = sp.getString("type", "");
+
+        if(userType.equals("service_provider")){
+            DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
+            Query query = serviceProvidersRef.orderByKey().equalTo(currentUserId);
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                        emailFromDB = userSnapshot.child("email").getValue(String.class);
+                        nameFromDB = userSnapshot.child("name").getValue(String.class);
+                        usernameFromDB = userSnapshot.child("username").getValue(String.class);
+                        nameToShow.setText(nameFromDB);
+                        emailToShow.setText(emailFromDB);
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                throw databaseError.toException();
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    throw databaseError.toException();
+                }
+            });
+        } else {
+            DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceUsers");
+            Query query = serviceProvidersRef.orderByKey().equalTo(currentUserId);
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                        emailFromDB = userSnapshot.child("email").getValue(String.class);
+                        nameFromDB = userSnapshot.child("name").getValue(String.class);
+                        usernameFromDB = userSnapshot.child("username").getValue(String.class);
+                        nameToShow.setText(nameFromDB);
+                        emailToShow.setText(emailFromDB);
+                    }
+                }
 
-        nameToShow.setText(currentUserId);
-        emailToShow.setText(emailFromDB);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    throw databaseError.toException();
+                }
+            });
+        }
+
+        //emailToShow.setText(firebaseUser.getEmail());
+        //nameToShow.setText(currentUserId);
+
+
+
+
+
+        //nameToShow.setText(currentUserId);
+        //emailToShow.setText(emailFromDB);
 
         return root;
     }

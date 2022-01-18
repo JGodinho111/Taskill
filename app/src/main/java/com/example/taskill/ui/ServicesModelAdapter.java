@@ -1,6 +1,5 @@
 package com.example.taskill.ui;
 import android.app.Activity;
-import android.app.Service;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,11 +12,11 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskill.R;
-import com.example.taskill.ui.services.BabysitingServiceFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 // FirebaseRecyclerAdapter is a class provided by
 // FirebaseUI. it provides functions to bind, adapt and show
@@ -29,11 +28,14 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
 
     private Context context;
 
+    private String service;
+
     public ServicesModelAdapter(
-            @NonNull FirebaseRecyclerOptions<ServicesModel> options, Context context)
+            @NonNull FirebaseRecyclerOptions<ServicesModel> options, Context context, String service)
     {
         super(options);
         this.context = context;
+        this.service = service;
     }
 
     // Function to bind the view in Card view(here
@@ -44,6 +46,11 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
     onBindViewHolder(@NonNull ServicesModelsViewholder holder,
                      int position, @NonNull ServicesModel model)
     {
+
+        /*Map<String,Integer> ps;
+        ps.clear();
+        ps = model.getProvided_services();
+         */
 
         // Add firstname from model class (here
         // "person.class")to appropriate view in Card
@@ -66,6 +73,15 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
                 navController.navigate(R.id.navigation_hireServicee, args);
             }
         });
+
+        for (String s : model.getProvided_services().keySet()) {
+            if(s.equals(service)){
+
+            } else {
+
+            }
+        }
+
     }
 
     // Function to tell the class about the Card view (here
