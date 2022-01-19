@@ -181,23 +181,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                         SendDataToFirebase();
                         sendUserToNextActivity();
-                        Toast.makeText(RegisterActivity.this,"Login Successful!", Toast.LENGTH_SHORT).show();
-                        /*
-                        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-
-                                    progressDialog.dismiss();
-                                    sendUserToNextActivity();
-                                    Toast.makeText(RegisterActivity.this,"Login Successful!", Toast.LENGTH_SHORT).show();
-                                }else{
-                                    progressDialog.dismiss();
-                                    Toast.makeText(RegisterActivity.this,""+task.getException(),Toast.LENGTH_SHORT).show();
-
-                                }
-                            }
-                        });*/
 
                     }else{
                         progressDialog.dismiss();

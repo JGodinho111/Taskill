@@ -157,6 +157,9 @@
     <string name="title_single_service_dogwalking">Dog Walkers</string>
     <string name="title_single_service_electrician">Electricists</string>
     <string name="title_single_service_plumber">Plumbers</string>
+    <string name="title_activity_user_bookings">UserBookingsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
     >>>>>>> booking
 
 </resources>

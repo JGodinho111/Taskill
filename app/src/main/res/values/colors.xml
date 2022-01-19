@@ -10,5 +10,6 @@
     <color name="taskill_main_color">#1ABC9B</color>
     <color name="taskill_main_color_lighter">#15e6bc</color>
     <color name="taskill_secondary_color">#20232A</color>
+    <color name="tabs_color">#DCDCDE</color>
 
 </resources>

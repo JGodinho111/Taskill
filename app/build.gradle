@@ -29,6 +29,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    dataBinding{
+        enabled=true
+    }
 }
 
 dependencies {
@@ -55,6 +59,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
+//    implementation 'com.google.android.material:material:1.6.0'
     // FirebaseUI for Firebase Realtime Database
     implementation 'com.firebaseui:firebase-ui-database:8.0.0'
 

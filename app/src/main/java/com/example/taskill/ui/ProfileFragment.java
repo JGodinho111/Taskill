@@ -1,18 +1,24 @@
 package com.example.taskill.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.taskill.R;
+import com.example.taskill.UserBookingsActivity;
 import com.example.taskill.databinding.FragmentHireBinding;
 import com.example.taskill.databinding.FragmentProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,7 +54,7 @@ public class ProfileFragment extends Fragment {
     FirebaseAuth mAuth;
     SharedPreferences sp;
 
-
+    ImageView logout_btn;
 
 
     // TODO: Rename and change types of parameters
@@ -94,6 +100,8 @@ public class ProfileFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        LinearLayout layout = root.findViewById(R.id.bookings_button);
 
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
@@ -145,6 +153,28 @@ public class ProfileFragment extends Fragment {
                     throw databaseError.toException();
                 }
             });
+
+
+            layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent= new Intent(getActivity(), UserBookingsActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            logout_btn= root.findViewById(R.id.logout_button);
+            logout_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mAuth.signOut();
+                    Intent intent= new Intent(getActivity(), SplashActivity.class);
+                    startActivity(intent);
+
+
+                }
+            });
+
         }
 
         //emailToShow.setText(firebaseUser.getEmail());
