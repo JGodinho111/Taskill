@@ -18,11 +18,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutHireBar"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/roundcorner"
+            android:layout_height="65dp"
+            android:background="@color/taskill_main_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -109,7 +106,9 @@
                 android:id="@+id/buttonBooking"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="#20232A"
                 android:ems="17"
@@ -124,6 +123,7 @@
                 android:id="@+id/textViewHireDistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
                 android:text="2.8 km"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/aboutusperson"
@@ -138,16 +138,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/aboutusperson"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHireAway" />
-
-            <TextView
-                android:id="@+id/textViewHireRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="4.1/5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHireHour" />
 
             <TextView
                 android:id="@+id/textViewHireAway"
@@ -168,16 +158,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/aboutusperson"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHirePrice" />
-
-            <TextView
-                android:id="@+id/textViewHireAvgRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Avg. Rating"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHireRating" />
 
             <TextView
                 android:id="@+id/textViewHireService"

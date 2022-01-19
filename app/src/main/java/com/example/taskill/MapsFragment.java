@@ -45,8 +45,8 @@ public class MapsFragment extends Fragment {
         @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            //googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+            //googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         }
     };
     private LocationManager locationManager;
@@ -115,7 +115,7 @@ public class MapsFragment extends Fragment {
                             public void onMapReady(@NonNull GoogleMap googleMap) {
                                 LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                                 MarkerOptions options = new MarkerOptions().position(latLng).title("User Location");
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 24.0f));
                                 googleMap.addMarker(options);
                             }
                         });

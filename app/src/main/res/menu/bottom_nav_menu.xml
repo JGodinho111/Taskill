@@ -17,6 +17,11 @@
         android:icon="@drawable/icons8_support_50"
         android:title="@string/title_services" />
 
+    <item
+        android:id="@+id/navigation_maps"
+        android:icon="@drawable/icons8___map_marker___50"
+        android:title="@string/title_map" />
+
 
 
 <!--    <item-->

@@ -40,9 +40,6 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         this.service = service;
     }
 
-    // Function to bind the view in Card view(here
-    // "person.xml") with data in
-    // model class(here "person.class")
     @Override
     protected void
     onBindViewHolder(@NonNull ServicesModelsViewholder holder,
@@ -52,14 +49,9 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         if(!model.getProvided_services().keySet().isEmpty()){
             for (String s : model.getProvided_services().keySet()) {
                 if(s.equals(service)){
-                    // Add firstname from model class (here
-                    // "person.class")to appropriate view in Card
-                    // view (here "person.xml")
+
                     holder.list_name.setText(model.getName());
 
-                    // Add lastname from model class (here
-                    // "person.class")to appropriate view in Card
-                    // view (here "person.xml")
                     holder.list_email.setText(model.getEmail());
 
                     holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +73,6 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         }
         if(!model.getProvided_services().keySet().contains(service)){
             holder.itemView.setVisibility(View.GONE);
-            //this line hides the view completely
             holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
         }
         else{
@@ -89,9 +80,6 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         }
     }
 
-    // Function to tell the class about the Card view (here
-    // "person.xml")in
-    // which the data will be shown
     @NonNull
     @Override
     public ServicesModelsViewholder
@@ -104,8 +92,6 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         return new ServicesModelAdapter.ServicesModelsViewholder(view);
     }
 
-    // Sub Class to create references of the views in Card
-    // view (here "person.xml")
     class ServicesModelsViewholder
             extends RecyclerView.ViewHolder {
 
@@ -114,7 +100,6 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         public ServicesModelsViewholder(@NonNull View itemView)
         {
             super(itemView);
-
 
             list_name = itemView.findViewById(R.id.list_name);
             list_email = itemView.findViewById(R.id.list_email);
