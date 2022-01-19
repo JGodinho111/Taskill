@@ -150,31 +150,28 @@ public class ProfileFragment extends Fragment {
                     throw databaseError.toException();
                 }
             });
-
-
-            layout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent= new Intent(getActivity(), UserBookingsActivity.class);
-                    intent.putExtra("userId", currentUserId);
-                    startActivity(intent);
-                }
-            });
-
-            logout_btn= root.findViewById(R.id.logout_button);
-            logout_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mAuth.signOut();
-                    Intent intent= new Intent(getActivity(), SplashActivity.class);
-                    startActivity(intent);
-
-
-                }
-            });
-
         }
 
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getActivity(), UserBookingsActivity.class);
+                intent.putExtra("userId", currentUserId);
+                startActivity(intent);
+            }
+        });
+
+        logout_btn= root.findViewById(R.id.logout_button);
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Intent intent= new Intent(getActivity(), SplashActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
         //emailToShow.setText(firebaseUser.getEmail());
         //nameToShow.setText(currentUserId);
 
