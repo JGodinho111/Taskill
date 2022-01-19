@@ -35,6 +35,8 @@ import com.google.firebase.database.ValueEventListener;
 //=======
 //>>>>>>> booking:app/src/main/java/com/example/taskill/HireFragment.java
 import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -118,6 +120,7 @@ public class HireFragment extends Fragment {
 
         TextView nameToShow = root.findViewById(R.id.textViewHireServiceeName);
         TextView serviceProvidedToShow = root.findViewById(R.id.textViewHireService);
+        TextView servicePrice = root.findViewById(R.id.textViewHirePrice);
 
         DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
         Query query = serviceProvidersRef.orderByKey().equalTo(receiverUserID);
@@ -128,11 +131,23 @@ public class HireFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
                     emailFromDB = userSnapshot.child("email").getValue(String.class);
+                    Iterable<DataSnapshot> map = userSnapshot.child("provided_services").getChildren();
                     nameFromDB = userSnapshot.child("name").getValue(String.class);
                     servicesFromDB = userSnapshot.child("services").getValue(String.class);
                     usernameFromDB = userSnapshot.child("username").getValue(String.class);
                     nameToShow.setText(nameFromDB);
-                    serviceProvidedToShow.setText(servicesFromDB);
+
+
+                    //test code -> edit
+                    for (DataSnapshot s : map) {
+                        if(s.getKey().equals(service)){
+                            serviceProvidedToShow.equals(s);
+                            serviceProvidedToShow.setText(s.getKey());
+                            servicePrice.setText(s.getValue().toString() + " €");
+
+                        }
+                    }
+                    //serviceProvidedToShow.setText(servicesFromDB);
                 }
             }
 

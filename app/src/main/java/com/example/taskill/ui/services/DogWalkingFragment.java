@@ -89,8 +89,8 @@ public class DogWalkingFragment extends Fragment {
         //Query
         //DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders").child("provided_services");
 
-        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
-        Query query = serviceProvidersRef.orderByChild("dogwalking");
+        DatabaseReference serviceProvidersRef = firebaseDatabase.getReference().child("serviceProviders");
+        Query query = serviceProvidersRef.orderByChild("provided_services/dogwalking");
 
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()

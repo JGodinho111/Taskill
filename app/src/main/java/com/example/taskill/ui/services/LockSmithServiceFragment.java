@@ -16,6 +16,7 @@ import com.example.taskill.ui.ServicesModelAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class LockSmithServiceFragment extends Fragment {
 
@@ -84,8 +85,8 @@ public class LockSmithServiceFragment extends Fragment {
         mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())); // Instead of this since it's a fragment
 
         //Query
-        DatabaseReference query = firebaseDatabase.getReference().child("serviceProviders");
-
+        DatabaseReference serviceProvidersRef = firebaseDatabase.getReference().child("serviceProviders");
+        Query query = serviceProvidersRef.orderByChild("provided_services/locksmith");
         //RecyclerOptions
         FirebaseRecyclerOptions<ServicesModel> options = new FirebaseRecyclerOptions.Builder<ServicesModel>()
                 .setQuery(query,ServicesModel.class)

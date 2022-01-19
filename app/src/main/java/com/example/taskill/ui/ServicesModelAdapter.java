@@ -2,11 +2,15 @@ package com.example.taskill.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.FrameMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,8 +27,6 @@ import java.util.Map;
 // database contents in a Recycler View
 public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
         ServicesModel, ServicesModelAdapter.ServicesModelsViewholder> {
-
-    private ArrayList<ServicesModel> mProviders = new ArrayList<>();
 
     private Context context;
 
@@ -47,41 +49,44 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
                      int position, @NonNull ServicesModel model)
     {
 
-        /*Map<String,Integer> ps;
-        ps.clear();
-        ps = model.getProvided_services();
-         */
+        if(!model.getProvided_services().keySet().isEmpty()){
+            for (String s : model.getProvided_services().keySet()) {
+                if(s.equals(service)){
+                    // Add firstname from model class (here
+                    // "person.class")to appropriate view in Card
+                    // view (here "person.xml")
+                    holder.list_name.setText(model.getName());
 
-        // Add firstname from model class (here
-        // "person.class")to appropriate view in Card
-        // view (here "person.xml")
-        holder.list_name.setText(model.getName());
+                    // Add lastname from model class (here
+                    // "person.class")to appropriate view in Card
+                    // view (here "person.xml")
+                    holder.list_email.setText(model.getEmail());
 
-        // Add lastname from model class (here
-        // "person.class")to appropriate view in Card
-        // view (here "person.xml")
-        holder.list_email.setText(model.getEmail());
+                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String visitUserId = getRef(holder.getLayoutPosition()).getKey(); //or just position
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String visitUserId = getRef(holder.getLayoutPosition()).getKey(); //or just position
-
-                NavController navController = Navigation.findNavController((Activity) context, R.id.nav_host_fragment_activity_main_bot);
-                Bundle args = new Bundle();
-                args.putString("visitUserId", visitUserId);
-                navController.navigate(R.id.navigation_hireServicee, args);
-            }
-        });
-
-        for (String s : model.getProvided_services().keySet()) {
-            if(s.equals(service)){
-
-            } else {
-
+                            NavController navController = Navigation.findNavController((Activity) context, R.id.nav_host_fragment_activity_main_bot);
+                            Bundle args = new Bundle();
+                            args.putString("visitUserId", visitUserId);
+                            args.putString("service", service);
+                            navController.navigate(R.id.navigation_hireServicee, args);
+                        }
+                    });
+                } else {
+                    //holder.itemView.setVisibility(View.GONE);
+                }
             }
         }
-
+        if(!model.getProvided_services().keySet().contains(service)){
+            holder.itemView.setVisibility(View.GONE);
+            //this line hides the view completely
+            holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+        }
+        else{
+            holder.itemView.setVisibility(View.VISIBLE);
+        }
     }
 
     // Function to tell the class about the Card view (here
@@ -103,10 +108,13 @@ public class ServicesModelAdapter extends FirebaseRecyclerAdapter<
     // view (here "person.xml")
     class ServicesModelsViewholder
             extends RecyclerView.ViewHolder {
+
         TextView list_name, list_email;
+
         public ServicesModelsViewholder(@NonNull View itemView)
         {
             super(itemView);
+
 
             list_name = itemView.findViewById(R.id.list_name);
             list_email = itemView.findViewById(R.id.list_email);

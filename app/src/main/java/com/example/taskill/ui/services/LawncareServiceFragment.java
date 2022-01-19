@@ -86,7 +86,7 @@ public class LawncareServiceFragment extends Fragment {
 
         //Query
         DatabaseReference serviceProvidersRef = firebaseDatabase.getReference().child("serviceProviders");
-        Query query = serviceProvidersRef;
+        Query query = serviceProvidersRef.orderByChild("provided_services/lawncare");
 
 
         //RecyclerOptions
