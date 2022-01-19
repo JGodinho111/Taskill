@@ -11,7 +11,7 @@
         android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/taskill_main_color"
+        android:background="@color/taskill_main_color_lighter"
         android:overScrollMode="ifContentScrolls"
         app:itemIconTint="@color/taskill_secondary_color"
         app:itemTextColor="@color/taskill_secondary_color"

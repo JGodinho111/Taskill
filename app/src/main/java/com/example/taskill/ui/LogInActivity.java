@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.taskill.R;
-import com.example.taskill.ui.home.ServiceProviderHomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -122,7 +121,7 @@ public class LogInActivity extends AppCompatActivity {
 
     private void sendUserToNextActivity() {
         if(userType.equals("service_provider")) {
-            Intent intent = new Intent(LogInActivity.this, ServiceProviderHomeActivity.class);
+            Intent intent = new Intent(LogInActivity.this, MainActivityBot.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }

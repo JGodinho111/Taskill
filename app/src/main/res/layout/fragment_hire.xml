@@ -47,7 +47,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutHireContent"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -82,12 +82,15 @@
 
             <TextView
                 android:id="@+id/textViewHireDescription"
-                android:layout_width="346dp"
-                android:layout_height="230dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
                 android:text="Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!Babysitter e dog walker nos tempos livres!"
                 android:textColor="#000000"
-                app:layout_constraintStart_toStartOf="@+id/textViewHireAbout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout" />
 
             <TextView
@@ -106,6 +109,7 @@
                 android:id="@+id/buttonBooking"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="#20232A"
                 android:ems="17"

@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.taskill.R;
-import com.example.taskill.ui.home.ServiceProviderHomeActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

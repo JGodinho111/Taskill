@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.taskill.R;
+import com.example.taskill.data.Booking;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -84,18 +85,16 @@ public class FirstFragment extends Fragment {
         mFirestoreList = v.findViewById(R.id.firestore_booking_list);
 
         mFirestoreList.setHasFixedSize(true);
-        mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity())); // Insted of this since it's a fragment
+        mFirestoreList.setLayoutManager(new LinearLayoutManager(v.getContext())); // Insted of this since it's a fragment
 
         sp=getActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
         String userType = sp.getString("type", "");
 
-
-        Query query;
         DatabaseReference bookingsRef = firebaseDatabase.getReference();
-        query = bookingsRef;
-
-        String cc = mAuth.getInstance().getCurrentUser().getUid();
+        Query query = bookingsRef;
+        //String cc = mAuth.getInstance().getCurrentUser().getUid();
         //if(mAuth.getInstance().getCurrentUser().getUid().isEmpty())
+
         if(userType.equals("service_provider")){
             //Query
             query = bookingsRef.child("serviceProviders").child(mAuth.getInstance().getCurrentUser().getUid()).child("bookings");
@@ -110,7 +109,7 @@ public class FirstFragment extends Fragment {
                 .build();
 
 
-        adapter = new BookingModelAdapter(options,getContext());
+        adapter = new BookingModelAdapter(options,v.getContext());
 
         mFirestoreList.setAdapter(adapter);
 

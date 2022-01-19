@@ -1,20 +1,22 @@
 package com.example.taskill.ui;
 
+import com.example.taskill.data.BookingStatus;
+
 import java.util.Map;
 
 public class BookingModel {
 
     private String address;
     private String dateAndTime;
-    private String price;
+    private int price;
     private String service;
     private String serviceProvider;
     private String serviceRequester;
-    private String status;
+    private BookingStatus status;
 
     private BookingModel(){}
 
-    private BookingModel(String address, String dateAndTime, String price,String service,String serviceProvider,String serviceRequester,String status){
+    private BookingModel(String address, String dateAndTime, int price,String service, String serviceProvider, String serviceRequester, BookingStatus status){
         this.address = address;
         this.dateAndTime = dateAndTime;
         this.price = price;
@@ -40,11 +42,11 @@ public class BookingModel {
         this.dateAndTime = dateAndTime;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -55,6 +57,7 @@ public class BookingModel {
     public void setService(String service) {
         this.service = service;
     }
+
 
     public String getServiceProvider() {
         return serviceProvider;
@@ -72,12 +75,13 @@ public class BookingModel {
         this.serviceRequester = serviceRequester;
     }
 
-    public String getStatus() {
+    public BookingStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(BookingStatus status) {
         this.status = status;
     }
+
 
 }

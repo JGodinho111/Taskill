@@ -45,7 +45,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutHireContent"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
@@ -78,18 +78,17 @@
                 android:layout_width="96dp"
                 android:layout_height="93dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout2"
                 app:srcCompat="@drawable/profile_button" />
 
             <TextView
                 android:id="@+id/textViewHireDescription2"
-                android:layout_width="323dp"
+                android:layout_width="0dp"
                 android:layout_height="63dp"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="27dp"
-                android:layout_marginEnd="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="About About About About About About About About About About About About "
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -114,20 +113,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="164dp"
+                android:layout_marginTop="8dp"
                 android:text="Location"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHireDescription2" />
+                app:layout_constraintTop_toBottomOf="@+id/aboutusperson" />
 
             <TextView
                 android:id="@+id/textViewHireAbout3"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="27dp"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="224dp"
                 android:text="Service Description"
                 android:textColor="#000000"
@@ -139,9 +138,11 @@
 
             <Button
                 android:id="@+id/buttonBooking"
-                android:layout_width="338dp"
+                android:layout_width="0dp"
                 android:layout_height="52dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="#20232A"
                 android:ems="17"
                 android:text="Apply for job"
@@ -174,10 +175,9 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="325dp"
+                android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginStart="27dp"
-                android:layout_marginTop="9dp"
                 android:layout_marginEnd="40dp"
                 android:src="@drawable/babysitting_logo"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -186,10 +186,10 @@
 
             <com.google.android.gms.maps.MapView
                 android:id="@+id/mapView"
-                android:layout_width="332dp"
+                android:layout_width="0dp"
                 android:layout_height="82dp"
                 android:layout_marginStart="31dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="29dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

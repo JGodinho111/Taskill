@@ -177,7 +177,7 @@
             <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/gridlayout"
                 android:layout_width="317dp"
-                android:layout_height="440dp"
+                android:layout_height="400dp"
                 android:layout_margin="10dp"
                 android:layout_marginTop="19dp"
                 app:columnCount="2"

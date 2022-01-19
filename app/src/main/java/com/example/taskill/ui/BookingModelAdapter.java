@@ -41,7 +41,7 @@ public class BookingModelAdapter extends FirebaseRecyclerAdapter<
 
         holder.list_booking_name.setText(model.getServiceProvider());
         holder.list_booking_service.setText(model.getService());
-        holder.list_booking_status.setText(model.getStatus());
+        holder.list_booking_status.setText(model.getStatus().toString());
         holder.list_booking_date.setText(model.getDateAndTime());
         holder.list_booking_price.setText(model.getPrice());
         holder.list_booking_address.setText(model.getAddress());

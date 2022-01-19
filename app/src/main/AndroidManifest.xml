@@ -13,10 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskill">
         <activity
-            android:name=".ui.home.ServiceProviderHomeActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
             android:name=".ui.UserBookingsActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

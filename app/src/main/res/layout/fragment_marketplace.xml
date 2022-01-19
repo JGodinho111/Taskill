@@ -38,12 +38,14 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#15E6BC"
         android:clickable="true"
         android:src="@android:drawable/ic_menu_add"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="315dp"
-        tools:layout_editor_absoluteY="600dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ScrollView
         android:id="@+id/scrollView4"
@@ -52,8 +54,10 @@
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="SpeakableTextPresentCheck">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,7 +94,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayoutMarketPlace1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
@@ -101,10 +105,11 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="227dp"
+                    android:layout_width="0dp"
                     android:layout_height="69dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="28dp"
+                    android:layout_marginEnd="4dp"
                     android:text="Need someone qualified to clean a big stain and perform a full cleaning on a synthetic carpet! I´m willing to pay 20"
                     android:textColor="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +162,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayoutMarketPlace2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
@@ -194,14 +199,14 @@
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="222dp"
+                    android:layout_width="0dp"
                     android:layout_height="58dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="36dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_marginEnd="4dp"
                     android:text="Need someone to give out flyers from my business company! I´m willing to pay 5€/h."
                     android:textColor="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.954"
                     app:layout_constraintStart_toEndOf="@+id/imageViewMarketPlace2"
                     app:layout_constraintTop_toBottomOf="@+id/textView10" />
 

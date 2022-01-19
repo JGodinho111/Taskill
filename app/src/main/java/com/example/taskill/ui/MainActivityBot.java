@@ -1,23 +1,14 @@
 package com.example.taskill.ui;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 
 import com.example.taskill.R;
-import com.example.taskill.ui.home.ServiceProviderHomeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -50,11 +41,13 @@ public class MainActivityBot extends AppCompatActivity {
                 R.id.navigation_services ,R.id.navigation_menu, R.id.navigation_marketplace)
                 .build();
 
-        if(userType.equals("service_provider")) {
+        /*if(userType.equals("service_provider")) {
             Intent intent = new Intent(MainActivityBot.this, ServiceProviderHomeActivity.class);
             startActivity(intent);
         }
         else
+
+         */
             navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main_bot);
 
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

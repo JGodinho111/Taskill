@@ -38,9 +38,9 @@
         android:id="@+id/constraintLayoutServicesBar"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginTop="-45dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-70dp"
         android:background="@color/taskill_main_color"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView3">
 
@@ -66,7 +66,7 @@
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="70dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,127 +85,103 @@
             <!-- TODO: Update blank fragment layout -->
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/imageButtonCarpenter"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton8"
+                android:src="@drawable/carpenter"
+                app:layout_constraintEnd_toEndOf="@+id/imageButtonBabysitting"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonBabysitting"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/imageButtonDogWalking"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintStart_toStartOf="@+id/imageButton7"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+                android:src="@drawable/dog1"
+                app:layout_constraintStart_toStartOf="@+id/imageButtonElectrician"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonElectrician"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/imageButtonBabysitting"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton6"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton6"
+                android:src="@drawable/babysitting_logo"
+                app:layout_constraintEnd_toEndOf="@+id/imageButtonLawncare"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonLawncare"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/imageButtonElectrician"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintStart_toStartOf="@+id/imageButton5"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+                android:src="@drawable/electrician"
+                app:layout_constraintStart_toStartOf="@+id/imageButtonPlumber"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonPlumber"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/roundcorner"
-                android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton4"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/roundcorner"
-                android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintStart_toStartOf="@+id/imageButton3"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/imageButtonCleaning"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="64dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/babysitting"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                android:src="@drawable/partycleaning"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonLockSmith"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imageButtonLockSmith"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="64dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/cleaning"
+                android:src="@drawable/locksmith"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonCleaning"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/imageButtonPlumber"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/repairs"
-                app:layout_constraintStart_toStartOf="@+id/imageButton"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton"
+                android:src="@drawable/plumber"
+                app:layout_constraintStart_toStartOf="@+id/imageButtonCleaning"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonCleaning"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/imageButtonLawncare"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/roundcorner"
                 android:backgroundTint="@color/taskill_main_color"
-                android:src="@drawable/shopping"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+                android:src="@drawable/lawncare"
+                app:layout_constraintEnd_toEndOf="@+id/imageButtonLockSmith"
+                app:layout_constraintTop_toBottomOf="@+id/imageButtonLockSmith"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
