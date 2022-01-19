@@ -30,6 +30,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         <activity
+            android:name=".ui.home.ProviderHomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
             android:name=".ui.UserBookingsActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
