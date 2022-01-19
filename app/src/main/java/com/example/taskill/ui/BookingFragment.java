@@ -167,10 +167,10 @@ public class BookingFragment extends Fragment {
             NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_activity_main_bot);
             Bundle args = new Bundle();
             pathName = textWithTime.getText().toString();
-            if (pathName != "Data e Hora escolhida"){
+            if (!pathName.equals("Data e Hora escolhida") ){
                 String path = "bookings/" + name + "/" + pathName;
-                StorageReference ref = storage.getReference(path);
-                UploadTask uploadTask = ref.putBytes(pathName.getBytes());
+                //StorageReference ref = storage.getReference(path);
+                //UploadTask uploadTask = ref.putBytes(pathName.getBytes());
                 SendDataToFirebase();
             }
             args.putString("service",service);
@@ -288,7 +288,7 @@ public class BookingFragment extends Fragment {
                         ServiceProvider newProvider= new ServiceProvider(name,username, email, password, bookings, provided_services);
                         newProvider.addBooking(newBooking);
 
-                        serviceProvidersRef.child(receiverUserId).setValue(newProvider);
+                        serviceProvidersRef.child(receiverUserId).child("bookings").child(mAuth.getCurrentUser().getUid() + receiverUserId + dateAndTime).setValue(newBooking);
                     }
 
                     //String serviceProvider = name;
@@ -327,7 +327,7 @@ public class BookingFragment extends Fragment {
                         //(String name, String username, String email, String password, List<Booking> bookings, Map<String,Integer> provided_services)
                         ServiceUser newServiceUser= new ServiceUser(name, username, email, password, bookings);
                         newServiceUser.addBooking(newBooking);
-                        serviceUsersRef.child(mAuth.getCurrentUser().getUid()).setValue(newServiceUser);
+                        serviceUsersRef.child(mAuth.getCurrentUser().getUid()).child("bookings").child(mAuth.getCurrentUser().getUid() + receiverUserId + dateAndTime).setValue(newBooking);
                     }
 
                     //String serviceProvider = name;

@@ -3,7 +3,13 @@ package com.example.taskill.data;
 import android.location.Address;
 import android.location.Location;
 
-public class Booking {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+
+public class Booking implements DatabaseReference.CompletionListener {
 
     private String serviceProvider;
     private String serviceRequester;
@@ -69,4 +75,8 @@ public class Booking {
         this.address = address;
     }
 
+    @Override
+    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+
+    }
 }

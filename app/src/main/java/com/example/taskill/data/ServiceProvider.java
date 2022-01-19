@@ -17,7 +17,6 @@ public class ServiceProvider implements DatabaseReference.CompletionListener {
     public String email;
     public String password;
     public List<Booking> bookings;
-
     public Map<String,Integer> provided_services;
 
     public ServiceProvider() {
