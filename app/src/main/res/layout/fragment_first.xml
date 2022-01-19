@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:background="@color/taskill_secondary_color"
     android:backgroundTint="@color/taskill_secondary_color"
-    tools:context=".FirstFragment">
+    tools:context=".ui.FirstFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/firestore_booking_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

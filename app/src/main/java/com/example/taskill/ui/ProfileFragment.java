@@ -7,8 +7,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.taskill.R;
-import com.example.taskill.UserBookingsActivity;
-import com.example.taskill.databinding.FragmentHireBinding;
 import com.example.taskill.databinding.FragmentProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -113,6 +109,7 @@ public class ProfileFragment extends Fragment {
         sp=getActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
         String userType = sp.getString("type", "");
 
+        //TODO - Deixou de funcionar para providers não sei pq
         if(userType.equals("service_provider")){
             DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
             Query query = serviceProvidersRef.orderByKey().equalTo(currentUserId);
@@ -159,6 +156,7 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent= new Intent(getActivity(), UserBookingsActivity.class);
+                    //intent.putExtra("userId", currentUserId);
                     startActivity(intent);
                 }
             });

@@ -12,7 +12,7 @@
 
     <Button
         android:id="@+id/date_time_input"
-        android:layout_width="0dp"
+        android:layout_width="212dp"
         android:layout_height="wrap_content"
         android:background="@color/taskill_main_color"
         android:backgroundTint="@color/taskill_main_color"
@@ -20,7 +20,6 @@
         android:inputType="none"
         app:layout_constraintBottom_toTopOf="@+id/text_with_date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -33,12 +32,11 @@
         android:text="Data e Hora escolhida"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_confirm"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"
         android:background="@color/taskill_main_color"
@@ -48,7 +46,6 @@
         android:translationY="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_with_date" />
 

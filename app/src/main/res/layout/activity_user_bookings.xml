@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/taskill_secondary_color"
     android:backgroundTint="@color/taskill_secondary_color"
-    tools:context=".UserBookingsActivity">
+    tools:context=".ui.UserBookingsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/tab_layout"

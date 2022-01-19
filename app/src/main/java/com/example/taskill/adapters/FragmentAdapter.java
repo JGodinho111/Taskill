@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.taskill.FirstFragment;
+import com.example.taskill.ui.FirstFragment;
 import com.example.taskill.ui.SecondFragment;
 
 public class FragmentAdapter extends FragmentStateAdapter {
