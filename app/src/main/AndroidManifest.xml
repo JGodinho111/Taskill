@@ -13,9 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taskill">
         <activity
-            android:name=".UserBookingsActivity"
+            android:name=".ui.home.ServiceProviderHomeActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name=".UserBookingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ui.AccountActivity"
             android:exported="false"
@@ -58,7 +62,6 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
     </application>
 
 </manifest>

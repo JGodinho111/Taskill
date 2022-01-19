@@ -73,8 +73,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="340dp"
+        android:layout_height="126dp"
         android:layout_marginTop="200dp"
         android:background="@drawable/roundcorner"
         android:clickable="true"
@@ -87,7 +87,7 @@
 
         <LinearLayout
             android:id="@+id/bookings_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
@@ -201,8 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/icons8_username_50"
-                android:drawablePadding="10dp"
-                android:hint="Name" />
+                android:drawablePadding="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -214,10 +213,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableLeft="@drawable/icons8_at_sign_50"
-                android:drawablePadding="10dp"
-                android:hint="E-mail" />
+                android:drawablePadding="10dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/taskill_main_color"
+            android:text="UPDATE"
+            android:textColor="@color/taskill_secondary_color"
+            tools:ignore="TextContrastCheck" />
+
     </LinearLayout>
 
     <ImageView

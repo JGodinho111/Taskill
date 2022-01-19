@@ -23,7 +23,8 @@
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
             android:text="Bookings"
-            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            android:textColor="@color/taskill_secondary_color" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"

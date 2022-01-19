@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.taskill.R;
+import com.example.taskill.ui.home.ServiceProviderHomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -38,6 +39,7 @@ public class LogInActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     SharedPreferences sp;
+    String userType;
 
     @SuppressLint({"ResourceAsColor", "Range"})
     @Override
@@ -54,6 +56,7 @@ public class LogInActivity extends AppCompatActivity {
         mUser= mAuth.getCurrentUser();
 
         sp= getApplicationContext().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        userType = sp.getString("type", "");
 
         b = (Button)findViewById(R.id.buttonLogIn);
         b.setOnClickListener(new View.OnClickListener() {
@@ -118,8 +121,15 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent= new Intent(LogInActivity.this,MainActivityBot.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        if(userType.equals("service_provider")) {
+            Intent intent = new Intent(LogInActivity.this, ServiceProviderHomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(LogInActivity.this, MainActivityBot.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
     }
 }

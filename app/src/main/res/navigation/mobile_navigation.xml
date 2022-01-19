@@ -105,5 +105,15 @@
         android:name="com.example.taskill.ui.BookingFragment"
         android:label="@string/title_booking_fragment"
         tools:layout="@layout/fragment_booking" />
+ <activity
+     android:id="@+id/userBookingsActivity2"
+     android:name="com.example.taskill.UserBookingsActivity"
+     android:label="activity_user_bookings"
+     tools:layout="@layout/activity_user_bookings" />
+ <activity
+     android:id="@+id/serviceProviderHomeActivity"
+     android:name="com.example.taskill.ui.home.ServiceProviderHomeActivity"
+     android:label="activity_service_provider_home"
+     tools:layout="@layout/activity_service_provider_home" />
 
 </navigation>
