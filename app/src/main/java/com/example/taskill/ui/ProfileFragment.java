@@ -156,7 +156,7 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent= new Intent(getActivity(), UserBookingsActivity.class);
-                    //intent.putExtra("userId", currentUserId);
+                    intent.putExtra("userId", currentUserId);
                     startActivity(intent);
                 }
             });
