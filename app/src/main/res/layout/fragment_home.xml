@@ -69,11 +69,13 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="22dp"
+                android:elevation="10dp"
                 android:src="@drawable/profile_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/icons8___selfies_50" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -192,7 +194,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -217,7 +219,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -240,7 +242,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -263,7 +265,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -286,7 +288,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -309,7 +311,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -332,7 +334,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 
@@ -355,7 +357,7 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/taskill_main_color"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="0dp"
+                    app:cardElevation="10dp"
                     app:layout_columnWeight="1"
                     app:layout_rowWeight="1">
 

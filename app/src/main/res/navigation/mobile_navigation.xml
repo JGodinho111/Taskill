@@ -19,7 +19,7 @@
 
    <fragment
         android:id="@+id/navigation_marketplace"
-        android:name="com.example.taskill.ui.notifications.NotificationsFragment"
+        android:name="com.example.taskill.ui.marketplace.MarketplaceFragment"
         android:label="@string/title_marketplace"
         tools:layout="@layout/fragment_marketplace" />
 
@@ -107,7 +107,7 @@
         tools:layout="@layout/fragment_booking" />
  <activity
      android:id="@+id/userBookingsActivity2"
-     android:name="com.example.taskill.UserBookingsActivity"
+     android:name="com.example.taskill.ui.UserBookingsActivity"
      android:label="activity_user_bookings"
      tools:layout="@layout/activity_user_bookings" />
  <activity
@@ -115,5 +115,10 @@
      android:name="com.example.taskill.ui.home.ServiceProviderHomeActivity"
      android:label="activity_service_provider_home"
      tools:layout="@layout/activity_service_provider_home" />
+ <fragment
+     android:id="@+id/marketplaceItemFragment"
+     android:name="com.example.taskill.ui.MarketplaceItemFragment"
+     android:label="fragment_marketplace_item"
+     tools:layout="@layout/fragment_marketplace_item" />
 
 </navigation>

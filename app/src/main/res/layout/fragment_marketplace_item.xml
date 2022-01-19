@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/taskill_secondary_color"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MarketplaceItemFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutHireBar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/taskill_main_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/marketplace_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="MARKETPLACE ITEM"
+                android:textAllCaps="true"
+                android:textColor="@color/taskill_secondary_color"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.517" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutHireContent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/roundcorner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayoutHireBar"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayoutHireBar"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHireBar"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <!--android:src="@drawable/pretty_smiling_joyfully_female_with_fair_hair_dressed_casually_looking_with_satisfaction" -->
+
+            <TextView
+                android:id="@+id/textViewHireServiceeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="36dp"
+                android:text="Ana Maria"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/aboutusperson"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout2" />
+
+            <ImageView
+                android:id="@+id/aboutusperson"
+                android:layout_width="96dp"
+                android:layout_height="93dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout2"
+                app:srcCompat="@drawable/profile_button" />
+
+            <TextView
+                android:id="@+id/textViewHireDescription2"
+                android:layout_width="323dp"
+                android:layout_height="63dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="42dp"
+                android:text="About About About About About About About About About About About About "
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/textViewHireAbout2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Requester"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireDescription2" />
+
+            <TextView
+                android:id="@+id/textViewHireAbout4"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="164dp"
+                android:text="Location"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireDescription2" />
+
+            <TextView
+                android:id="@+id/textViewHireAbout3"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="224dp"
+                android:text="Service Description"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonBooking"
+                android:layout_width="338dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#20232A"
+                android:ems="17"
+                android:text="Apply for job"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+            <TextView
+                android:id="@+id/textViewHireDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="48dp"
+                android:text="2.8 km"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.983"
+                app:layout_constraintStart_toEndOf="@+id/textViewHireServiceeName"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout2" />
+
+            <TextView
+                android:id="@+id/textViewHireAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:text="Away"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireDistance" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="325dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/babysitting_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout3" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="332dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="29dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHireAbout4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
