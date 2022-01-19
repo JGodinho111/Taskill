@@ -110,6 +110,11 @@
      android:name="com.example.taskill.ui.UserBookingsActivity"
      android:label="activity_user_bookings"
      tools:layout="@layout/activity_user_bookings" />
+ <fragment
+     android:id="@+id/navigation_maps"
+     android:name="com.example.taskill.MapsFragment"
+     android:label="maps_fragment"
+     tools:layout="@layout/fragment_maps" />
  <!--
  <activity
      android:id="@+id/serviceProviderHomeActivity"

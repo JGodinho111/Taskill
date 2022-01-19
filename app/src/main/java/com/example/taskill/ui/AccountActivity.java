@@ -1,7 +1,10 @@
 package com.example.taskill.ui;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -50,6 +53,36 @@ public class AccountActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
+        });
+        // Request permission for location - directly from Android Studio Website on asking for location permision
+        ActivityResultLauncher<String[]> locationPermissionRequest =
+                registerForActivityResult(new ActivityResultContracts
+                                .RequestMultiplePermissions(), result -> {
+                            Boolean fineLocationGranted = null;
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                                fineLocationGranted = result.getOrDefault( //will not work on API level lower than 24, project minimum is 21
+                                        Manifest.permission.ACCESS_FINE_LOCATION, false);
+                            }
+                            Boolean coarseLocationGranted = null;
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                                coarseLocationGranted = result.getOrDefault( //will not work on API level lower than 24, project minimum is 21
+                                        Manifest.permission.ACCESS_COARSE_LOCATION,false);
+                            }
+                            if (fineLocationGranted != null && fineLocationGranted) {
+                                // Precise location access granted.
+                            } else if (coarseLocationGranted != null && coarseLocationGranted) {
+                                // Only approximate location access granted.
+                            } else {
+                                // No location access granted.
+                            }
+                        }
+                );
+        // Before you perform the actual permission request, check whether your app
+        // already has the permissions, and whether your app needs to show a permission
+        // rationale dialog. For more details, see Request permissions.
+        locationPermissionRequest.launch(new String[] {
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
         });
     }
 }
