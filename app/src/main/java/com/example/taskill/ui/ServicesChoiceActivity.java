@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.taskill.R;
+import com.example.taskill.ui.home.ProviderHomeActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -59,7 +60,7 @@ public class ServicesChoiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendServicesToFirebase();
-                Intent intent= new Intent(ServicesChoiceActivity.this, MainActivityBot.class);
+                Intent intent= new Intent(ServicesChoiceActivity.this, ProviderHomeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }

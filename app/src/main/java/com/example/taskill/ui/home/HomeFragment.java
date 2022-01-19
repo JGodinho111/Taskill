@@ -15,7 +15,6 @@ import androidx.navigation.Navigation;
 import com.example.taskill.R;
 import com.example.taskill.databinding.FragmentHomeBinding;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 //Uses Menu Fragment
 public class HomeFragment extends Fragment {
@@ -53,7 +52,7 @@ public class HomeFragment extends Fragment {
         mAuth= FirebaseAuth.getInstance();
         activeUserId= mAuth.getCurrentUser().getUid();
 
-        btn_profile=root.findViewById(R.id.profile_button);
+        btn_profile=root.findViewById(R.id.pprofile_button);
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
