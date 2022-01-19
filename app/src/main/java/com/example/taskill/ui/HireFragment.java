@@ -164,6 +164,7 @@ public class HireFragment extends Fragment {
             TextView textView = root.findViewById(R.id.textViewHireServiceeName);
             args.putString("name", textView.getText().toString());
             args.putString("service", service);
+            args.putString("receiverUserId", receiverUserID);
             navController.navigate(R.id.navigation_booking, args);
         });
 

@@ -1,10 +1,16 @@
 package com.example.taskill.data;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ServiceProvider {
+public class ServiceProvider implements DatabaseReference.CompletionListener {
 
     public String name;
     public String username;
@@ -57,5 +63,10 @@ public class ServiceProvider {
 
     public void addBooking(Booking booking){
         bookings.add(booking);
+    }
+
+    @Override
+    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+
     }
 }

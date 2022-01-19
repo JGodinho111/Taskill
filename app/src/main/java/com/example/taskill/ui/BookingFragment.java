@@ -6,6 +6,7 @@ import android.location.Address;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -23,8 +24,11 @@ import android.widget.TimePicker;
 
 import com.example.taskill.R;
 import com.example.taskill.data.Booking;
+import com.example.taskill.data.ServiceProvider;
 import com.example.taskill.data.ServiceUser;
 import com.example.taskill.databinding.FragmentBookingBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,10 +42,11 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
-
-
+import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -69,6 +74,9 @@ public class BookingFragment extends Fragment {
     String service;
     SharedPreferences sp;
     String pathName;
+    FirebaseAuth mAuth;
+    private String currentUserId;
+    private String receiverUserId;
 
     public BookingFragment() {
         // Required empty public constructor
@@ -100,6 +108,7 @@ public class BookingFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
             name = getArguments().getString("name");
             service = getArguments().getString("service");
+            receiverUserId = getArguments().getString("receiverUserId");
         }
         sp= getActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
@@ -164,6 +173,8 @@ public class BookingFragment extends Fragment {
                 UploadTask uploadTask = ref.putBytes(pathName.getBytes());
                 SendDataToFirebase();
             }
+            args.putString("service",service);
+            args.putString("visitUserId", receiverUserId);
             navController.navigate(R.id.navigation_hireServicee, args);
             });
 
@@ -182,22 +193,109 @@ public class BookingFragment extends Fragment {
         //String name = "aaaaaa";
         //String email = "aaaaaa@gmail.com";
         //String password = "default";
-        Query query = reference.orderByChild("serviceUsers").equalTo(serviceRequester);
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        currentUserId= firebaseUser.getUid();
+        DatabaseReference serviceProvidersRef = FirebaseDatabase.getInstance().getReference().child("serviceProviders");
+
+        Query query = serviceProvidersRef.orderByKey().equalTo(receiverUserId);
+
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String name = snapshot.child(serviceRequester).child("name").getValue(String.class);
-                    String email = snapshot.child(serviceRequester).child("email").getValue(String.class);
-                    String password = snapshot.child(serviceRequester).child("password").getValue(String.class);
-                    String serviceProvider = name;
-                    String dateAndTime = pathName;
+                    //String name = snapshot.child(currentUserId).child("name").getValue(String.class);
+                    //String email = snapshot.child(currentUserId).child("email").getValue(String.class);
+                    //String password = snapshot.child(currentUserId).child("password").getValue(String.class);
+                    for (DataSnapshot userSnapshot: snapshot.getChildren()) {
+                        //List<Booking> bookings = userSnapshot.child("bookings").getValue(List.class);
+                        String name = userSnapshot.child("name").getValue(String.class);
+                        String email = userSnapshot.child("email").getValue(String.class);
+                        String password = userSnapshot.child("password").getValue(String.class);
+                        String username = userSnapshot.child("username").getValue(String.class);
+                        List<Booking> bookings = new ArrayList<>();
+                        Map<String,Integer> provided_services = new Map<String, Integer>() {
+                            @Override
+                            public int size() {
+                                return 0;
+                            }
+
+                            @Override
+                            public boolean isEmpty() {
+                                return false;
+                            }
+
+                            @Override
+                            public boolean containsKey(@Nullable Object o) {
+                                return false;
+                            }
+
+                            @Override
+                            public boolean containsValue(@Nullable Object o) {
+                                return false;
+                            }
+
+                            @Nullable
+                            @Override
+                            public Integer get(@Nullable Object o) {
+                                return null;
+                            }
+
+                            @Nullable
+                            @Override
+                            public Integer put(String s, Integer integer) {
+                                return null;
+                            }
+
+                            @Nullable
+                            @Override
+                            public Integer remove(@Nullable Object o) {
+                                return null;
+                            }
+
+                            @Override
+                            public void putAll(@NonNull Map<? extends String, ? extends Integer> map) {
+
+                            }
+
+                            @Override
+                            public void clear() {
+
+                            }
+
+                            @NonNull
+                            @Override
+                            public Set<String> keySet() {
+                                return null;
+                            }
+
+                            @NonNull
+                            @Override
+                            public Collection<Integer> values() {
+                                return null;
+                            }
+
+                            @NonNull
+                            @Override
+                            public Set<Entry<String, Integer>> entrySet() {
+                                return null;
+                            }
+                        };
+                        //Map<String,Integer> provided_services = userSnapshot.child("provided_services").getValue(Map<String,Integer>.class);
+                        String dateAndTime = pathName;
+                        Booking newBooking= new Booking(address, receiverUserId, currentUserId,service, dateAndTime,5);
+                        //(String name, String username, String email, String password, List<Booking> bookings, Map<String,Integer> provided_services)
+                        ServiceProvider newProvider= new ServiceProvider(name,username, email, password, bookings, provided_services);
+                        newProvider.addBooking(newBooking);
+
+                        serviceProvidersRef.child(receiverUserId).setValue(newProvider);
+                    }
+
+                    //String serviceProvider = name;
+
                     //String password = sp.getString("password","");
-                    List<Booking> bookingList = new ArrayList<>();
-                    Booking newBooking= new Booking(address, serviceProvider, serviceRequester, service, dateAndTime,5);
-                    ServiceUser newUser= new ServiceUser(name,serviceRequester,email,password,bookingList);
-                    newUser.addBooking(newBooking);
-                    reference.child("serviceUsers").child(serviceRequester).setValue(newUser);
+
+
                 }
             }
 
@@ -206,7 +304,45 @@ public class BookingFragment extends Fragment {
 
             }
         });
+        DatabaseReference serviceUsersRef = FirebaseDatabase.getInstance().getReference().child("serviceUsers");
 
+        Query query2 = serviceUsersRef.orderByKey().equalTo(currentUserId);
+
+        query2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    //String name = snapshot.child(currentUserId).child("name").getValue(String.class);
+                    //String email = snapshot.child(currentUserId).child("email").getValue(String.class);
+                    //String password = snapshot.child(currentUserId).child("password").getValue(String.class);
+                    for (DataSnapshot userSnapshot: snapshot.getChildren()) {
+                        //List<Booking> bookings = userSnapshot.child("bookings").getValue(List.class);
+                        String name = userSnapshot.child("name").getValue(String.class);
+                        String email = userSnapshot.child("email").getValue(String.class);
+                        String password = userSnapshot.child("password").getValue(String.class);
+                        String username = userSnapshot.child("username").getValue(String.class);
+                        String dateAndTime = pathName;
+                        List<Booking> bookings = new ArrayList<>();
+                        Booking newBooking= new Booking(address, receiverUserId, currentUserId,service, dateAndTime,5);
+                        //(String name, String username, String email, String password, List<Booking> bookings, Map<String,Integer> provided_services)
+                        ServiceUser newServiceUser= new ServiceUser(name, username, email, password, bookings);
+                        newServiceUser.addBooking(newBooking);
+                        serviceUsersRef.child(mAuth.getCurrentUser().getUid()).setValue(newServiceUser);
+                    }
+
+                    //String serviceProvider = name;
+
+                    //String password = sp.getString("password","");
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
