@@ -60,7 +60,7 @@ public class ServicesChoiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendServicesToFirebase();
-                Intent intent= new Intent(ServicesChoiceActivity.this, ProviderHomeActivity.class);
+                Intent intent= new Intent(ServicesChoiceActivity.this, MainActivityBot.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
