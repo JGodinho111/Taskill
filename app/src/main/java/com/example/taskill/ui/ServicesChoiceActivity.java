@@ -38,13 +38,13 @@ public class ServicesChoiceActivity extends AppCompatActivity {
 
 
         c_babysitting=findViewById(R.id.checkBox_babysitting);
-        c_dogwalking= findViewById(R.id.checkBox_babysitting);
-        c_lawncare=findViewById(R.id.checkBox_babysitting);
-        c_locksmith=findViewById(R.id.checkBox_babysitting);
-        c_plumber=findViewById(R.id.checkBox_babysitting);
-        c_cleaning=findViewById(R.id.checkBox_babysitting);
-        c_electrician=findViewById(R.id.checkBox_babysitting);
-        c_carpenter=findViewById(R.id.checkBox_babysitting);
+        c_dogwalking= findViewById(R.id.checkBox_dogwalking);
+        c_lawncare=findViewById(R.id.checkBox_lawncare);
+        c_locksmith=findViewById(R.id.checkBox_locksmith);
+        c_plumber=findViewById(R.id.checkBox_plumber);
+        c_cleaning=findViewById(R.id.checkBox_cleaning);
+        c_electrician=findViewById(R.id.checkBox_electrician);
+        c_carpenter=findViewById(R.id.checkBox_carpenter);
 
         e_babysitting=findViewById(R.id.input_babysitting);
         e_dogwalking=findViewById(R.id.input_dogwalking);
@@ -60,7 +60,7 @@ public class ServicesChoiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendServicesToFirebase();
-                Intent intent= new Intent(ServicesChoiceActivity.this, MainActivityBot.class);
+                Intent intent= new Intent(ServicesChoiceActivity.this, ProviderHomeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
@@ -86,34 +86,35 @@ public class ServicesChoiceActivity extends AppCompatActivity {
 
     private void verifyCheckboxesAndInputs(Map<String, Integer> servicesProvided) {
 
-        if(c_babysitting.isChecked() && !e_babysitting.getText().toString().equals(""))
+        if(c_babysitting.isChecked() && !e_babysitting.getText().toString().equals("")){
             servicesProvided.put("babysitting",Integer.parseInt(e_babysitting.getText().toString()));
+        }
 
-
-        if(c_dogwalking.isChecked() && !e_dogwalking.getText().toString().equals(""))
+        if(c_dogwalking.isChecked() && !e_dogwalking.getText().toString().equals("")){
             servicesProvided.put("dogwalking",Integer.parseInt(e_dogwalking.getText().toString()));
+        }
 
-
-        if(c_lawncare.isChecked() && !e_lawncare.getText().toString().equals(""))
+        if(c_lawncare.isChecked() && !e_lawncare.getText().toString().equals("")){
             servicesProvided.put("lawncare",Integer.parseInt(e_lawncare.getText().toString()));
-
-        if(c_locksmith.isChecked() && !e_locksmith.getText().toString().equals(""))
+        }
+        if(c_locksmith.isChecked() && !e_locksmith.getText().toString().equals("")){
             servicesProvided.put("locksmith",Integer.parseInt(e_locksmith.getText().toString()));
+        }
 
-
-        if(c_plumber.isChecked() && !e_plumber.getText().toString().equals(""))
+        if(c_plumber.isChecked() && !e_plumber.getText().toString().equals("")){
             servicesProvided.put("plumber",Integer.parseInt(e_plumber.getText().toString()));
+        }
 
-
-        if(c_cleaning.isChecked() && !e_cleaning.getText().toString().equals(""))
+        if(c_cleaning.isChecked() && !e_cleaning.getText().toString().equals("")){
             servicesProvided.put("cleaning",Integer.parseInt(e_cleaning.getText().toString()));
+        }
 
-
-        if(c_electrician.isChecked() && !e_electrician.getText().toString().equals(""))
+        if(c_electrician.isChecked() && !e_electrician.getText().toString().equals("")){
             servicesProvided.put("electrician",Integer.parseInt(e_electrician.getText().toString()));
+        }
 
-
-        if(c_carpenter.isChecked() && !e_carpenter.getText().toString().equals(""))
+        if(c_carpenter.isChecked() && !e_carpenter.getText().toString().equals("")){
             servicesProvided.put("carpenter",Integer.parseInt(e_carpenter.getText().toString()));
+        }
     }
 }
